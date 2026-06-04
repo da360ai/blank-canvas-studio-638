@@ -19,6 +19,7 @@ import ProjectsSection from "@/components/da360/ProjectsSection";
 import ValuePillars from "@/components/da360/ValuePillars";
 import MentorSection from "@/components/da360/MentorSection";
 import ComparisonSection from "@/components/da360/ComparisonSection";
+import CurriculumSection from "@/components/da360/CurriculumSection";
 
 import TrustedBySection from "@/components/da360/TrustedBySection";
 import RiskReversal from "@/components/da360/RiskReversal";
@@ -66,8 +67,7 @@ const Index = () => {
         <SuccessStoriesSection />
         <TestimonialsSection />
         <ChoosePathSection />
-        
-        
+        <CurriculumSection />
         <ProjectsSection />
         <ValuePillars />
         <BookDemoSection />
