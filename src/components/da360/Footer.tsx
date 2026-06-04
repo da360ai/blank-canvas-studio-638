@@ -50,7 +50,7 @@ const Footer = () => (
           <img
             src={da360Logo}
             alt="Digital Academy 360"
-            className="h-10 md:h-12 object-contain mb-5 md:mb-6"
+            className="h-12 md:h-14 object-contain mb-6 md:mb-8 -ml-1"
             style={{ filter: "brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(7460%) hue-rotate(3deg) brightness(95%) contrast(115%)" }}
           />
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
