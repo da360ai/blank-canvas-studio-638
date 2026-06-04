@@ -15,16 +15,16 @@ const SpotlightSection = () => (
         Media, Awards & Achievements
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-6 md:gap-x-16 md:gap-y-8 max-w-6xl mx-auto">
         {mediaLogos.map((logo) => (
           <div
             key={logo.name}
-            className="flex items-center justify-center p-2 md:p-3 h-[120px] md:h-[130px]"
+            className="min-w-0 overflow-hidden flex items-center justify-center px-5 py-2 md:px-6 md:py-3 h-[96px] md:h-[120px]"
           >
             <img
               src={logo.src}
               alt={logo.name}
-              className="max-h-[100px] md:max-h-[110px] max-w-full md:max-w-[260px] w-auto object-contain"
+              className="block w-auto max-w-[78%] max-h-[76px] md:max-h-[86px] object-contain"
               loading="lazy"
             />
           </div>
