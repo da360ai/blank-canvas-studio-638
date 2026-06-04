@@ -113,6 +113,17 @@ const HeroSection = () => {
                 </p>
               </div>
             </div>
+
+            <Button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById("curriculum-section");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-bold text-base px-8 py-5 md:py-6 rounded-full"
+            >
+              Explore Course
+            </Button>
           </div>
 
           {/* Right — Lead Form */}
