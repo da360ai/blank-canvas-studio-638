@@ -58,6 +58,7 @@ const InlineLeadForm = ({
     setEmail("");
     setMobile("");
     setExperience("");
+    setCourse("");
     setTimeout(() => setSubmitted(false), 4000);
   };
 
