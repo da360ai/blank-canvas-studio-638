@@ -117,7 +117,7 @@ const HeroSection = () => {
             <Button
               type="button"
               onClick={() => {
-                const el = document.getElementById("curriculum-section");
+                const el = document.getElementById("choose-path-section");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-bold text-base px-8 py-5 md:py-6 rounded-full"
