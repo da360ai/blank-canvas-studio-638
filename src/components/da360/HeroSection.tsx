@@ -19,6 +19,7 @@ const HeroSection = () => {
   const [countryCode, setCountryCode] = useState("+91 IN");
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
+  const [course, setCourse] = useState("");
   const [learningCenter, setLearningCenter] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
@@ -47,6 +48,7 @@ const HeroSection = () => {
       countryCode,
       mobile,
       experience,
+      course,
       learningCenter,
       learningMode,
       authorized,
@@ -54,7 +56,7 @@ const HeroSection = () => {
 
     setSubmitting(false);
     setSubmitted(true);
-    setFullName(""); setEmail(""); setMobile(""); setExperience(""); setLearningCenter("");
+    setFullName(""); setEmail(""); setMobile(""); setExperience(""); setCourse(""); setLearningCenter("");
     setTimeout(() => setSubmitted(false), 4000);
   };
 
@@ -180,6 +182,19 @@ const HeroSection = () => {
                     <option className="text-foreground" value="1-3 Years">1-3 Years</option>
                     <option className="text-foreground" value="3-5 Years">3-5 Years</option>
                     <option className="text-foreground" value="5+ Years">5+ Years</option>
+                  </select>
+
+                  {/* Course */}
+                  <select
+                    required
+                    value={course}
+                    onChange={(e) => setCourse(e.target.value)}
+                    className="flex h-12 md:h-13 w-full rounded-lg border border-border bg-background px-4 py-2 text-base text-muted-foreground"
+                  >
+                    <option value="" disabled>Select Course</option>
+                    <option className="text-foreground" value="PGCP">PGCP</option>
+                    <option className="text-foreground" value="DML">DML</option>
+                    <option className="text-foreground" value="SDP">SDP</option>
                   </select>
 
                   {/* Learning Center */}

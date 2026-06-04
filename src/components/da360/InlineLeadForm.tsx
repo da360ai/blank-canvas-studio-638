@@ -32,6 +32,7 @@ const InlineLeadForm = ({
   const [countryCode, setCountryCode] = useState("+91 IN");
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
+  const [course, setCourse] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
   const isDark = variant === "dark";
@@ -47,6 +48,7 @@ const InlineLeadForm = ({
       countryCode,
       mobile,
       experience,
+      course,
       learningMode,
       authorized,
     });
@@ -56,6 +58,7 @@ const InlineLeadForm = ({
     setEmail("");
     setMobile("");
     setExperience("");
+    setCourse("");
     setTimeout(() => setSubmitted(false), 4000);
   };
 
@@ -103,6 +106,13 @@ const InlineLeadForm = ({
               <option className="text-foreground" value="1-3 Years">1-3 Years</option>
               <option className="text-foreground" value="3-5 Years">3-5 Years</option>
               <option className="text-foreground" value="5+ Years">5+ Years</option>
+            </select>
+
+            <select required value={course} onChange={(e) => setCourse(e.target.value)} className="flex h-12 w-full rounded-lg border border-border bg-background px-4 text-base text-muted-foreground">
+              <option value="" disabled>Select Course</option>
+              <option className="text-foreground" value="PGCP">PGCP</option>
+              <option className="text-foreground" value="DML">DML</option>
+              <option className="text-foreground" value="SDP">SDP</option>
             </select>
 
             <div className="flex items-center gap-4 py-1">

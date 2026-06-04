@@ -8,6 +8,7 @@ export interface LeadPayload {
   countryCode: string;
   mobile: string;
   experience: string;
+  course?: string;
   learningCenter?: string;
   learningMode: string;
   authorized: boolean;
@@ -59,7 +60,7 @@ const buildApiPayload = (payload: LeadPayload) => ({
   firstLandedUrl: payload.pageUrl,
   finalUrl: payload.pageUrl,
   "form-name_cta-text": payload.source,
-  course_program: "Webinar",
+  course_program: payload.course || "Webinar",
   form_id: "form-slot-booking",
   username: "gH5jAU2Yzj",
   password: "tSQS6xytwz",
