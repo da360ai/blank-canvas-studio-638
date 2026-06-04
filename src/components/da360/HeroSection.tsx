@@ -48,6 +48,7 @@ const HeroSection = () => {
       countryCode,
       mobile,
       experience,
+      course,
       learningCenter,
       learningMode,
       authorized,
