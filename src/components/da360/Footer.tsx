@@ -44,7 +44,7 @@ const Footer = () => (
 
     {/* Main Footer */}
     <div className="container mx-auto px-4 py-10 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
         {/* Left: Accredited By + Contact */}
         <div>
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
