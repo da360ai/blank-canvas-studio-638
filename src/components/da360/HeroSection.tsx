@@ -19,6 +19,7 @@ const HeroSection = () => {
   const [countryCode, setCountryCode] = useState("+91 IN");
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
+  const [course, setCourse] = useState("");
   const [learningCenter, setLearningCenter] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
