@@ -48,6 +48,7 @@ const InlineLeadForm = ({
       countryCode,
       mobile,
       experience,
+      course,
       learningMode,
       authorized,
     });
