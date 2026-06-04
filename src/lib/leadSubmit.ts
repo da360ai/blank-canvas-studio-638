@@ -60,7 +60,7 @@ const buildApiPayload = (payload: LeadPayload) => ({
   firstLandedUrl: payload.pageUrl,
   finalUrl: payload.pageUrl,
   "form-name_cta-text": payload.source,
-  course_program: "Webinar",
+  course_program: payload.course || "Webinar",
   form_id: "form-slot-booking",
   username: "gH5jAU2Yzj",
   password: "tSQS6xytwz",
