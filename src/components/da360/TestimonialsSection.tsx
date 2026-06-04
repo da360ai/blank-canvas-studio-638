@@ -60,20 +60,22 @@ const TestimonialsSection = () => {
                       decoding="async"
                     />
                     {/* Name card at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-white px-3 md:px-4 py-2.5 md:py-3">
-                      <h3 className="font-heading font-extrabold italic text-foreground text-base md:text-lg uppercase leading-tight">
-                        {t.name}
-                      </h3>
-                      <p className="text-foreground/70 text-xs md:text-sm">{t.role}</p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-white px-3 md:px-4 py-2.5 md:py-3 flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <h3 className="font-heading font-extrabold italic text-foreground text-base md:text-lg uppercase leading-tight truncate">
+                          {t.name}
+                        </h3>
+                        <p className="text-foreground/70 text-xs md:text-sm truncate">{t.role}</p>
+                      </div>
+                      {/* Play button */}
+                      <button
+                        onClick={() => setActiveVideo(t.video)}
+                        className="shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-foreground bg-white flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-white transition-all group-hover:scale-105"
+                        aria-label={`Play ${t.name} testimonial`}
+                      >
+                        <Play className="h-4 w-4" fill="currentColor" />
+                      </button>
                     </div>
-
-                    {/* Play button */}
-                    <button
-                      onClick={() => setActiveVideo(t.video)}
-                      className="absolute bottom-7 right-3 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-foreground bg-white flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-white transition-all group-hover:scale-105"
-                    >
-                      <Play className="h-4 w-4" fill="currentColor" />
-                    </button>
                   </div>
                 </div>
               </div>
