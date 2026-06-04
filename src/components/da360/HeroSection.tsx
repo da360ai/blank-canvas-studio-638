@@ -56,7 +56,7 @@ const HeroSection = () => {
 
     setSubmitting(false);
     setSubmitted(true);
-    setFullName(""); setEmail(""); setMobile(""); setExperience(""); setLearningCenter("");
+    setFullName(""); setEmail(""); setMobile(""); setExperience(""); setCourse(""); setLearningCenter("");
     setTimeout(() => setSubmitted(false), 4000);
   };
 
