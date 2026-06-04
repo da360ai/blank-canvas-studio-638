@@ -46,8 +46,8 @@ const Footer = () => (
 
     {/* Main Footer */}
     <div className="container mx-auto px-4 py-10 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
-        {/* Left: Logo + Accredited By + Contact */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
+        {/* Left: Logo */}
         <div>
           <img
             src={da360Logo}
@@ -55,6 +55,10 @@ const Footer = () => (
             className="h-12 md:h-14 object-contain mb-6 md:mb-8 -ml-1"
             style={{ filter: "brightness(0) invert(1)" }}
           />
+        </div>
+
+        {/* Center: Accredited By + Contact */}
+        <div className="md:text-center">
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
           <div className="inline-flex items-center gap-4 mb-6 md:mb-8 bg-white rounded-lg px-4 py-3">
             <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-10 md:h-12 object-contain" />
@@ -66,7 +70,7 @@ const Footer = () => (
           <p className="text-white/60 text-sm">info@da360.ai</p>
         </div>
 
-        {/* Right: Copyright + Legal + Socials */}
+        {/* Right: Copyright + Legal */}
         <div className="md:text-right">
           <p className="text-xs text-white/40 mb-4">
             Copyright © {new Date().getFullYear()} Digital Academy 360. All rights reserved.
