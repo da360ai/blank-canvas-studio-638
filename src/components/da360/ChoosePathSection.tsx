@@ -129,7 +129,7 @@ const ChoosePathSection = () => (
               For the Beginner
             </span>
             <h3 className="font-heading text-lg md:text-2xl font-extrabold mb-1">
-              Skill Certificate in Digital Marketing & AI
+              Skill Diploma Certificate in Digital Marketing & AI
             </h3>
             <div className="flex flex-wrap gap-2 mt-3 mb-5 md:mb-6">
               <span className="px-3 py-1 rounded-md border border-black/20 text-xs font-semibold">3 Months</span>
