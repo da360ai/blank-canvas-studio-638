@@ -1,7 +1,7 @@
 import { Check, Star, ArrowRight } from "lucide-react";
 
 const ChoosePathSection = () => (
-  <section className="section-spacing bg-background">
+  <section id="choose-path-section" className="section-spacing bg-background">
     <div className="container mx-auto px-4">
       <h2 className="font-heading text-2xl md:text-[48px] font-extrabold text-center text-foreground mb-3 leading-tight md:leading-[1.3]">
         Choose your path.<br />
