@@ -1,8 +1,8 @@
 const mediaLogos = [
-  { name: "The Times of India", src: "/media/times-of-india.svg?v=4" },
-  { name: "YourStory", src: "/media/yourstory.svg?v=4" },
-  { name: "Hindustan Times", src: "/media/hindustan-times.svg?v=4" },
-  { name: "The Economic Times", src: "/media/economic-times.svg?v=4" },
+  { name: "The Times of India", src: "/media/times-of-india.svg?v=5" },
+  { name: "YourStory", src: "/media/yourstory.svg?v=5" },
+  { name: "Hindustan Times", src: "/media/hindustan-times.svg?v=5" },
+  { name: "The Economic Times", src: "/media/economic-times.svg?v=5" },
 ];
 
 const SpotlightSection = () => (
