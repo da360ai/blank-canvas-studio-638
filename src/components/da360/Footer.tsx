@@ -58,20 +58,6 @@ const Footer = () => (
           <p className="text-white/60 text-sm">info@da360.ai</p>
         </div>
 
-        {/* Center: Digital Marketing Courses in India */}
-        <div>
-          <h4 className="font-heading font-bold text-white mb-4 text-base md:text-lg">Digital Marketing Courses in India</h4>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-white/60">
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Bangalore</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Jayanagar</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In JP Nagar</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Malleshwaram</a>
-          </div>
-        </div>
-
         {/* Right: Copyright + Legal + Socials */}
         <div className="md:text-right">
           <p className="text-xs text-white/40 mb-4">
