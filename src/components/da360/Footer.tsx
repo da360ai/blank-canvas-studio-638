@@ -1,4 +1,4 @@
-import { Phone, Calendar, Users, Award } from "lucide-react";
+import { Phone, Calendar, Users, Award, BookOpen, Briefcase } from "lucide-react";
 import da360Logo from "@/assets/da360-logo.png";
 import InlineLeadForm from "@/components/da360/InlineLeadForm";
 
@@ -22,6 +22,8 @@ const Footer = () => (
               { icon: Calendar, text: "60-minute interactive live session" },
               { icon: Users, text: "Meet industry mentors & current learners" },
               { icon: Award, text: "Walk away with a personalized career roadmap" },
+              { icon: BookOpen, text: "Explore the curriculum & hands-on projects" },
+              { icon: Briefcase, text: "Get insights on placements & hiring partners" },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-3">
                 <span className="shrink-0 w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
