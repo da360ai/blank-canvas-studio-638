@@ -45,8 +45,9 @@ const Footer = () => (
     {/* Main Footer */}
     <div className="container mx-auto px-4 py-10 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
-        {/* Left: Accredited By + Contact */}
+        {/* Left: Logo + Accredited By + Contact */}
         <div>
+          <img src={da360Logo} alt="Digital Academy 360" className="h-10 md:h-12 object-contain mb-5 md:mb-6 invert" />
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
           <div className="inline-flex items-center gap-4 mb-6 md:mb-8 bg-white rounded-lg px-4 py-3">
             <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-10 md:h-12 object-contain" />
