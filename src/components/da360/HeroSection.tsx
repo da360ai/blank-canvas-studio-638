@@ -184,6 +184,19 @@ const HeroSection = () => {
                     <option className="text-foreground" value="5+ Years">5+ Years</option>
                   </select>
 
+                  {/* Course */}
+                  <select
+                    required
+                    value={course}
+                    onChange={(e) => setCourse(e.target.value)}
+                    className="flex h-12 md:h-13 w-full rounded-lg border border-border bg-background px-4 py-2 text-base text-muted-foreground"
+                  >
+                    <option value="" disabled>Select Course</option>
+                    <option className="text-foreground" value="PGCP">PGCP</option>
+                    <option className="text-foreground" value="DML">DML</option>
+                    <option className="text-foreground" value="SDP">SDP</option>
+                  </select>
+
                   {/* Learning Center */}
                   <select
                     required
