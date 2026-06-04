@@ -32,6 +32,7 @@ const InlineLeadForm = ({
   const [countryCode, setCountryCode] = useState("+91 IN");
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
+  const [course, setCourse] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
   const isDark = variant === "dark";
