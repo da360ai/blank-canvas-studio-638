@@ -203,9 +203,9 @@ const HeroSection = () => {
                     className="flex h-12 md:h-13 w-full rounded-lg border border-border bg-background px-4 py-2 text-base text-muted-foreground"
                   >
                     <option value="" disabled>Select Course</option>
-                    <option className="text-foreground" value="PGCP">PGCP</option>
-                    <option className="text-foreground" value="DML">DML</option>
-                    <option className="text-foreground" value="SDP">SDP</option>
+                    <option className="text-foreground" value="DML">DML 12 months</option>
+                    <option className="text-foreground" value="PGCP">PGCP 6 months</option>
+                    <option className="text-foreground" value="SDP">SDP 3 months</option>
                   </select>
 
                   {/* Learning Center */}
