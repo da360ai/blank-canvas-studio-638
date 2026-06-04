@@ -44,7 +44,7 @@ const Index = () => {
   const topOffset = bannerVisible ? "36px" : "0px";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <TopBanner onClose={() => setBannerVisible(false)} />
       <div style={{ paddingTop: topOffset }}>
         <Navbar topOffset={topOffset} />

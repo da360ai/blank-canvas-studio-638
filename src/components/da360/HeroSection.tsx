@@ -114,7 +114,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right — Lead Form */}
-          <div className="relative max-w-md mx-auto lg:mx-auto">
+          <div className="relative w-full max-w-md mx-auto">
             <div className="absolute inset-0 bg-card rounded-2xl border-2 border-foreground transform rotate-2 translate-x-1.5 translate-y-1.5" />
             <div className="relative bg-card rounded-2xl p-6 md:p-8 border-2 border-foreground">
               <h3 className="font-heading text-lg md:text-xl font-bold text-foreground mb-5 md:mb-6">

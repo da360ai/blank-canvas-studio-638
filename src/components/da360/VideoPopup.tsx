@@ -27,7 +27,7 @@ const VideoPopup = () => {
   return (
     <div
       className={cn(
-        "fixed bottom-24 md:bottom-28 left-6 z-50 w-[280px] md:w-[340px]",
+        "fixed bottom-20 md:bottom-28 left-3 md:left-6 z-50 w-[220px] sm:w-[260px] md:w-[340px]",
         "rounded-2xl overflow-hidden border-2 border-foreground bg-white",
         "shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] animate-in slide-in-from-left-8 fade-in duration-500"
       )}
