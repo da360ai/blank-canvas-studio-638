@@ -8,6 +8,7 @@ export interface LeadPayload {
   countryCode: string;
   mobile: string;
   experience: string;
+  course?: string;
   learningCenter?: string;
   learningMode: string;
   authorized: boolean;
