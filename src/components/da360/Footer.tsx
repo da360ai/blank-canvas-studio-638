@@ -48,7 +48,7 @@ const Footer = () => (
         {/* Left: Accredited By + Contact */}
         <div>
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
-          <div className="flex items-center gap-4 mb-6 md:mb-8 bg-white rounded-lg px-4 py-3">
+          <div className="inline-flex items-center gap-4 mb-6 md:mb-8 bg-white rounded-lg px-4 py-3">
             <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-10 md:h-12 object-contain" />
             <img src="/accreditation/media.svg" alt="Media Skill Council" className="h-10 md:h-12 object-contain" />
             <img src="/logos/nsdc.png" alt="NSDC Digital" className="h-10 md:h-12 object-contain" />
