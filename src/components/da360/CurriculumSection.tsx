@@ -450,7 +450,7 @@ const AccordionCard = ({ item }: { item: ModuleData }) => {
 };
 
 const CurriculumSection = () => (
-  <section className="section-spacing bg-[#F5F5F5]">
+  <section id="curriculum-section" className="section-spacing bg-[#F5F5F5]">
     <div className="container mx-auto px-4">
       {/* Section 1: Core Modules */}
       <div className="max-w-[1200px] mx-auto mb-20">
