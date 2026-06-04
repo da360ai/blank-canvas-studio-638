@@ -44,7 +44,7 @@ const Footer = () => (
 
     {/* Main Footer */}
     <div className="container mx-auto px-4 py-10 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
         {/* Left: Accredited By + Contact */}
         <div>
           <h4 className="font-heading font-bold text-white mb-4 md:mb-5 text-base md:text-lg">Accredited by</h4>
@@ -56,20 +56,6 @@ const Footer = () => (
           <h4 className="font-heading font-bold text-white mb-3 text-base md:text-lg">Contact Us for any query</h4>
           <p className="text-white/60 text-sm mb-1">+91 7353 515 515</p>
           <p className="text-white/60 text-sm">info@da360.ai</p>
-        </div>
-
-        {/* Center: Digital Marketing Courses in India */}
-        <div>
-          <h4 className="font-heading font-bold text-white mb-4 text-base md:text-lg">Digital Marketing Courses in India</h4>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-white/60">
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Bangalore</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Jayanagar</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In JP Nagar</a>
-            <span className="text-white/30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Digital Marketing Courses In Malleshwaram</a>
-          </div>
         </div>
 
         {/* Right: Copyright + Legal + Socials */}
