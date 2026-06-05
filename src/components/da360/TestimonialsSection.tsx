@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const THUMB_BASE = "https://www.digitalacademy360.com/images/video-testimonials";
+const THUMB_BASE = "/testimonials";
 const testimonials = [
   { name: "Ankita", role: "Digital Marketing Executive", company: "Leading Agency", video: "/videos/ankita.mp4", thumb: `${THUMB_BASE}/ankita.jpg` },
   { name: "Madhu", role: "SEO Specialist", company: "Top MNC", video: "/videos/madhu.mp4", thumb: `${THUMB_BASE}/madhu.jpg` },
