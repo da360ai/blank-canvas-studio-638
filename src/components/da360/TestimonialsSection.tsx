@@ -1,14 +1,14 @@
 import { useState, useRef } from "react";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 
+const THUMB_BASE = "https://www.digitalacademy360.com/images/video-testimonials";
 const testimonials = [
-  { name: "Ankita", role: "Digital Marketing Executive", company: "Leading Agency", video: "/videos/ankita.mp4" },
-  { name: "Madhu", role: "SEO Specialist", company: "Top MNC", video: "/videos/madhu.mp4" },
-  { name: "Nivedh", role: "Performance Marketer", company: "E-Commerce Brand", video: "/videos/nivedh.mp4" },
-  { name: "Snehal", role: "Content Strategist", company: "Digital Agency", video: "/videos/snehal.mp4" },
-  { name: "Vinayak", role: "Growth Marketing Lead", company: "SaaS Startup", video: "/videos/vinayak.mp4" },
-  { name: "Kesar", role: "Social Media Manager", company: "Media Company", video: "/videos/kesar.mp4" },
-  { name: "Nayil", role: "Campaign Specialist", company: "Ad Agency", video: "/videos/nayil.mp4" },
+  { name: "Ankita", role: "Digital Marketing Executive", company: "Leading Agency", video: "/videos/ankita.mp4", thumb: `${THUMB_BASE}/ankita.jpg` },
+  { name: "Madhu", role: "SEO Specialist", company: "Top MNC", video: "/videos/madhu.mp4", thumb: `${THUMB_BASE}/madhu.jpg` },
+  { name: "Nivedh", role: "Performance Marketer", company: "E-Commerce Brand", video: "/videos/nivedh.mp4", thumb: `${THUMB_BASE}/nivedh.jpg` },
+  { name: "Snehal", role: "Content Strategist", company: "Digital Agency", video: "/videos/snehal.mp4", thumb: `${THUMB_BASE}/snehal.jpg` },
+  { name: "Vinayak", role: "Growth Marketing Lead", company: "SaaS Startup", video: "/videos/vinayak.mp4", thumb: `${THUMB_BASE}/vinayak.jpg` },
+  { name: "Kesar", role: "Social Media Manager", company: "Media Company", video: "/videos/kesar.mp4", thumb: `${THUMB_BASE}/kesar.jpg` },
 ];
 
 const TestimonialsSection = () => {
@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
                   {/* Video thumbnail */}
                   <div className="relative h-[300px] md:h-[400px] overflow-hidden">
                     <img
-                      src={t.video.replace("/videos/", "/videos/thumbs/").replace(".mp4", ".jpg")}
+                      src={t.thumb}
                       alt={`${t.name} - ${t.role}`}
                       className="w-full h-full object-cover"
                       loading="lazy"
