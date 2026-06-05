@@ -1,33 +1,31 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import TopBanner from "@/components/da360/TopBanner";
 import Navbar from "@/components/da360/Navbar";
-import WhatsAppButton from "@/components/da360/WhatsAppButton";
-import VideoPopup from "@/components/da360/VideoPopup";
 import ScholarshipBar from "@/components/da360/ScholarshipBar";
 import HeroSection from "@/components/da360/HeroSection";
-import SocialProofStrip from "@/components/da360/SocialProofStrip";
-import AlumniCompaniesSection from "@/components/da360/AlumniCompaniesSection";
-import SpotlightSection from "@/components/da360/SpotlightSection";
-import PainPointSection from "@/components/da360/PainPointSection";
-import WhoIsThisFor from "@/components/da360/WhoIsThisFor";
-import SuccessStoriesSection from "@/components/da360/SuccessStoriesSection";
-import TestimonialsSection from "@/components/da360/TestimonialsSection";
-import ChoosePathSection from "@/components/da360/ChoosePathSection";
 
-
-import ProjectsSection from "@/components/da360/ProjectsSection";
-import ValuePillars from "@/components/da360/ValuePillars";
-import MentorSection from "@/components/da360/MentorSection";
-import ComparisonSection from "@/components/da360/ComparisonSection";
-import CurriculumSection from "@/components/da360/CurriculumSection";
-
-import TrustedBySection from "@/components/da360/TrustedBySection";
-import RiskReversal from "@/components/da360/RiskReversal";
-
-import JourneySection from "@/components/da360/JourneySection";
-import FinalCTA from "@/components/da360/FinalCTA";
-import BookDemoSection from "@/components/da360/BookDemoSection";
-import Footer from "@/components/da360/Footer";
+// Below-the-fold sections are lazy-loaded to keep initial bundle small
+const WhatsAppButton = lazy(() => import("@/components/da360/WhatsAppButton"));
+const VideoPopup = lazy(() => import("@/components/da360/VideoPopup"));
+const SocialProofStrip = lazy(() => import("@/components/da360/SocialProofStrip"));
+const AlumniCompaniesSection = lazy(() => import("@/components/da360/AlumniCompaniesSection"));
+const SpotlightSection = lazy(() => import("@/components/da360/SpotlightSection"));
+const PainPointSection = lazy(() => import("@/components/da360/PainPointSection"));
+const WhoIsThisFor = lazy(() => import("@/components/da360/WhoIsThisFor"));
+const SuccessStoriesSection = lazy(() => import("@/components/da360/SuccessStoriesSection"));
+const TestimonialsSection = lazy(() => import("@/components/da360/TestimonialsSection"));
+const ChoosePathSection = lazy(() => import("@/components/da360/ChoosePathSection"));
+const ProjectsSection = lazy(() => import("@/components/da360/ProjectsSection"));
+const ValuePillars = lazy(() => import("@/components/da360/ValuePillars"));
+const MentorSection = lazy(() => import("@/components/da360/MentorSection"));
+const ComparisonSection = lazy(() => import("@/components/da360/ComparisonSection"));
+const CurriculumSection = lazy(() => import("@/components/da360/CurriculumSection"));
+const TrustedBySection = lazy(() => import("@/components/da360/TrustedBySection"));
+const RiskReversal = lazy(() => import("@/components/da360/RiskReversal"));
+const JourneySection = lazy(() => import("@/components/da360/JourneySection"));
+const FinalCTA = lazy(() => import("@/components/da360/FinalCTA"));
+const BookDemoSection = lazy(() => import("@/components/da360/BookDemoSection"));
+const Footer = lazy(() => import("@/components/da360/Footer"));
 
 /*
  * CRO-Optimized Section Order (AIDA Framework)
@@ -49,41 +47,43 @@ const Index = () => {
       <TopBanner onClose={() => setBannerVisible(false)} />
       <div style={{ paddingTop: topOffset }}>
         <Navbar topOffset={topOffset} />
-        <WhatsAppButton />
-        <VideoPopup />
         <ScholarshipBar />
 
         {/* ── ATTENTION ── */}
         <HeroSection />
-        <SocialProofStrip />
-        <AlumniCompaniesSection />
 
-        {/* ── INTEREST ── */}
-        <PainPointSection />
-        <WhoIsThisFor />
-        <SpotlightSection />
+        <Suspense fallback={null}>
+          <WhatsAppButton />
+          <VideoPopup />
+          <SocialProofStrip />
+          <AlumniCompaniesSection />
 
-        {/* ── DESIRE ── */}
-        <SuccessStoriesSection />
-        <TestimonialsSection />
-        <ChoosePathSection />
-        <CurriculumSection />
-        <ProjectsSection />
-        <ValuePillars />
-        <BookDemoSection />
-        <MentorSection />
-        
-        <ComparisonSection />
-        
+          {/* ── INTEREST ── */}
+          <PainPointSection />
+          <WhoIsThisFor />
+          <SpotlightSection />
 
-        {/* ── TRUST ── */}
-        <TrustedBySection />
-        <RiskReversal />
+          {/* ── DESIRE ── */}
+          <SuccessStoriesSection />
+          <TestimonialsSection />
+          <ChoosePathSection />
+          <CurriculumSection />
+          <ProjectsSection />
+          <ValuePillars />
+          <BookDemoSection />
+          <MentorSection />
 
-        {/* ── ACTION ── */}
-        <JourneySection />
-        <FinalCTA />
-        <Footer />
+          <ComparisonSection />
+
+          {/* ── TRUST ── */}
+          <TrustedBySection />
+          <RiskReversal />
+
+          {/* ── ACTION ── */}
+          <JourneySection />
+          <FinalCTA />
+          <Footer />
+        </Suspense>
       </div>
     </div>
   );
