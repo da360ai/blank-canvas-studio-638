@@ -19,11 +19,11 @@ const Navbar = ({ topOffset = "0px" }: { topOffset?: string }) => {
         </div>
 
         <div className="flex items-center gap-3 md:gap-4">
-          <a href="tel:+919876543210" className="hidden md:flex items-center gap-1.5 text-sm text-foreground font-medium hover:text-primary transition-colors">
+          <a href="tel:+919035354441" className="hidden md:flex items-center gap-1.5 text-sm text-foreground font-medium hover:text-primary transition-colors">
             <Phone className="h-4 w-4" />
-            +91 98765 43210
+            +91 90353 54441
           </a>
-          <a href="tel:+919876543210" className="md:hidden flex items-center justify-center w-9 h-9 rounded-full border border-border">
+          <a href="tel:+919035354441" className="md:hidden flex items-center justify-center w-9 h-9 rounded-full border border-border">
             <Phone className="h-4 w-4 text-foreground" />
           </a>
           <CTAButton className="px-4 md:px-6 py-2 md:py-2.5 text-xs md:text-sm">
