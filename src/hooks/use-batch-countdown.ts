@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
  * Returns the closing time for the August 2026 batch.
  * The deadline is August 10, 2026 at 11:59:59 PM in the user's local time.
  */
-export function getNextBatchDeadline(): Date {
+export function getNextBatchDeadline(_from: Date = new Date()): Date {
   return new Date(2026, 7, 10, 23, 59, 59, 999);
 }
 
