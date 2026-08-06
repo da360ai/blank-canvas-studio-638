@@ -214,8 +214,8 @@ const specialisations: ModuleData[] = [
   },
   {
     label: "Specialisation",
-    number: 6,
-    title: "Specialisation 6 : Marketing Automation and MarTech",
+    number: 4,
+    title: "Specialisation 4 : Marketing Automation and MarTech",
     sessions: "5 Live Sessions",
     assignments: "2 Assignments",
     caseStudies: "3 Case Study",
