@@ -1,4 +1,4 @@
-import { Check, Star, ArrowRight } from "lucide-react";
+import { BadgeCheck, Check, Star, ArrowRight } from "lucide-react";
 
 const ChoosePathSection = () => (
   <section id="choose-path-section" className="section-spacing bg-background">
