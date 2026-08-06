@@ -33,6 +33,7 @@ const InlineLeadForm = ({
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
   const [course, setCourse] = useState("");
+  const [learningCenter, setLearningCenter] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
   const isDark = variant === "dark";
@@ -46,20 +47,22 @@ const InlineLeadForm = ({
       fullName,
       email,
       countryCode,
-      mobile,
-      experience,
-      course,
-      learningMode,
-      authorized,
+       mobile,
+       experience,
+       course,
+       learningCenter,
+       learningMode,
+       authorized,
     });
     setSubmitting(false);
     setSubmitted(true);
     setFullName("");
     setEmail("");
-    setMobile("");
-    setExperience("");
-    setCourse("");
-    setTimeout(() => setSubmitted(false), 4000);
+     setMobile("");
+     setExperience("");
+     setCourse("");
+     setLearningCenter("");
+     setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
@@ -113,6 +116,17 @@ const InlineLeadForm = ({
               <option className="text-foreground" value="DML">DML 12 months</option>
               <option className="text-foreground" value="PGCP">PGCP 6 months</option>
               <option className="text-foreground" value="SDP">SDP 3 months</option>
+            </select>
+
+            <select required value={learningCenter} onChange={(e) => setLearningCenter(e.target.value)} className="flex h-12 w-full rounded-lg border border-border bg-background px-4 text-base text-muted-foreground">
+              <option value="" disabled>Learning Center</option>
+              <option className="text-foreground" value="Bangalore">Bangalore</option>
+              <option className="text-foreground" value="JP Nagar">JP Nagar</option>
+              <option className="text-foreground" value="Malleswaram">Malleswaram</option>
+              <option className="text-foreground" value="Pune">Pune</option>
+              <option className="text-foreground" value="Hyderabad">Hyderabad</option>
+              <option className="text-foreground" value="Chennai">Chennai</option>
+              <option className="text-foreground" value="Online">Online</option>
             </select>
 
             <div className="flex items-center gap-4 py-1">
