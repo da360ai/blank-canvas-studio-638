@@ -216,13 +216,8 @@ const HeroSection = () => {
                     className="flex h-12 md:h-13 w-full rounded-lg border border-border bg-background px-4 py-2 text-base text-muted-foreground"
                   >
                      <option value="" disabled>Learning Center</option>
-                     <option className="text-foreground" value="Bangalore">Bangalore</option>
                      <option className="text-foreground" value="JP Nagar">JP Nagar</option>
                      <option className="text-foreground" value="Malleswaram">Malleswaram</option>
-                     <option className="text-foreground" value="Pune">Pune</option>
-                     <option className="text-foreground" value="Hyderabad">Hyderabad</option>
-                     <option className="text-foreground" value="Chennai">Chennai</option>
-                     <option className="text-foreground" value="Online">Online</option>
                   </select>
 
                   {/* Learning Mode */}
