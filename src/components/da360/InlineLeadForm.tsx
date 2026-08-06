@@ -33,6 +33,7 @@ const InlineLeadForm = ({
   const [mobile, setMobile] = useState("");
   const [experience, setExperience] = useState("");
   const [course, setCourse] = useState("");
+  const [learningCenter, setLearningCenter] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
   const isDark = variant === "dark";
@@ -46,20 +47,22 @@ const InlineLeadForm = ({
       fullName,
       email,
       countryCode,
-      mobile,
-      experience,
-      course,
-      learningMode,
-      authorized,
+       mobile,
+       experience,
+       course,
+       learningCenter,
+       learningMode,
+       authorized,
     });
     setSubmitting(false);
     setSubmitted(true);
     setFullName("");
     setEmail("");
-    setMobile("");
-    setExperience("");
-    setCourse("");
-    setTimeout(() => setSubmitted(false), 4000);
+     setMobile("");
+     setExperience("");
+     setCourse("");
+     setLearningCenter("");
+     setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
