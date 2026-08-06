@@ -49,9 +49,9 @@ const TestimonialsSection = () => {
           >
             {testimonials.map((t) => (
               <div key={t.name} className="flex-shrink-0 w-[240px] md:w-[320px] snap-start">
-                <div className="flex flex-col rounded-2xl overflow-hidden border-2 border-foreground bg-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group">
-                  {/* Video thumbnail uses a fixed height so every card matches the reference proportions */}
-                  <div className="relative h-[240px] md:h-[316px] w-full overflow-hidden">
+                <div className="flex aspect-[9/16] flex-col rounded-2xl overflow-hidden border-2 border-foreground bg-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group">
+                  {/* Portrait thumbnail keeps the full testimonial card at a stable 9:16 ratio */}
+                  <div className="relative min-h-0 flex-1 w-full overflow-hidden">
                     <img
                       src={t.thumb}
                       alt={`${t.name} - ${t.role}`}
@@ -61,8 +61,8 @@ const TestimonialsSection = () => {
                     />
                   </div>
 
-                  {/* Name card kept in the document flow so the card cannot crop its content */}
-                  <div className="flex min-h-[76px] items-center justify-between gap-3 bg-card px-3 py-2.5 md:px-4 md:py-3">
+                  {/* Name card stays in the document flow so the portrait card cannot crop its content */}
+                  <div className="flex min-h-[76px] shrink-0 items-center justify-between gap-3 bg-card px-3 py-2.5 md:px-4 md:py-3">
                     <div className="min-w-0">
                       <h3 className="font-heading font-extrabold italic text-foreground text-base md:text-lg uppercase leading-tight truncate">
                         {t.name}
