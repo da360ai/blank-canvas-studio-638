@@ -57,7 +57,6 @@ const Index = () => {
 
           {/* ── INTEREST ── */}
           <WhoIsThisFor />
-          <SpotlightSection />
 
           {/* ── DESIRE ── */}
           <SuccessStoriesSection />
