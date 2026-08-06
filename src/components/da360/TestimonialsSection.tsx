@@ -50,8 +50,8 @@ const TestimonialsSection = () => {
             {testimonials.map((t) => (
               <div key={t.name} className="flex-shrink-0 w-[240px] md:w-[320px] snap-start">
                 <div className="flex flex-col rounded-2xl overflow-hidden border-2 border-foreground bg-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group">
-                  {/* Video thumbnail */}
-                  <div className="relative aspect-square w-full overflow-hidden">
+                  {/* Video thumbnail uses a fixed height so every card matches the reference proportions */}
+                  <div className="relative h-[240px] md:h-[316px] w-full overflow-hidden">
                     <img
                       src={t.thumb}
                       alt={`${t.name} - ${t.role}`}
