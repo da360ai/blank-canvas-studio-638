@@ -13,7 +13,7 @@ const months: MonthData[] = [
   { month: 1, phase: "Foundation", title: "Marketing & Web Fundamentals", icon: BookOpen, topics: ["Digital Marketing Principles", "Branding & Business Fundamentals", "AI Content & Prompt Engineering", "Social Media Creative Design", "Color Theory & Typography"] },
   { month: 2, phase: "Build", title: "Website Development & SEO Basics", icon: Code, topics: ["HTML5 & CSS3 Fundamentals", "WordPress & WooCommerce", "Landing Page Design & CRO", "How Search Engines Work", "Keyword Research & Analysis"] },
   { month: 3, phase: "Growth", title: "SEO Mastery & Social Media", icon: Search, topics: ["On-Page & Technical SEO", "Off-Page SEO & Link Building", "Local SEO & Google Business", "Social Media Strategy", "Content Calendar Planning"] },
-  { month: 6, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Influencer & Meme Marketing", "Media Planning & Programmatic Ads"] },
+  { month: 4, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Influencer & Meme Marketing", "Media Planning & Programmatic Ads"] },
 ];
 
 const ProjectsSection = () => {
