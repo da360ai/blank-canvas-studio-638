@@ -33,15 +33,17 @@ type Mentor = {
   experience: string;
   image: string;
   bgColor: string;
+  employerLogo?: string;
+  employerName?: string;
 };
 
 type TabKey = "guest" | "faculty" | "advisors" | "placement";
 
 const guestMentors: Mentor[] = [
-  { name: "RAJESH CHOUDHURY", role: "DGM Digital Marketing at Puravankara", experience: "18+ Years Experience", image: rajeshImg, bgColor: "bg-[#8B2942]" },
-  { name: "SHANTANU SHARMA", role: "AVP Digital Marketing at Casagrand", experience: "8+ Years Experience", image: shantanuImg, bgColor: "bg-white" },
-  { name: "HARSHVARDHAN S", role: "Digital Lead - Merch at H&M India", experience: "10+ Years Experience", image: harshvardhanImg, bgColor: "bg-white" },
-  { name: "DEBEN RATH", role: "Associate Account Manager at Adobe", experience: "8+ Years Experience", image: debenImg, bgColor: "bg-[#A8C5E8]" },
+  { name: "RAJESH CHOUDHURY", role: "DGM Digital Marketing at Puravankara", experience: "18+ Years Experience", image: rajeshImg, bgColor: "bg-[#8B2942]", employerLogo: "/employers/puravankara.svg", employerName: "Puravankara" },
+  { name: "SHANTANU SHARMA", role: "AVP Digital Marketing at Casagrand", experience: "8+ Years Experience", image: shantanuImg, bgColor: "bg-white", employerLogo: "/employers/casagrand.svg", employerName: "Casagrand" },
+  { name: "HARSHVARDHAN S", role: "Digital Lead - Merch at H&M India", experience: "10+ Years Experience", image: harshvardhanImg, bgColor: "bg-white", employerLogo: "/employers/hm.svg", employerName: "H&M" },
+  { name: "DEBEN RATH", role: "Associate Account Manager at Adobe", experience: "8+ Years Experience", image: debenImg, bgColor: "bg-[#A8C5E8]", employerLogo: "/brands/brand_4.jpg", employerName: "Adobe" },
   { name: "GOPAL RAJ", role: "Founder at Verycom", experience: "15+ Years Experience", image: gopalrajImg, bgColor: "bg-[#FFD966]" },
   { name: "ADITYA AGARWAL", role: "Founder at Qilin Lab", experience: "AI & MarTech Expert", image: adityaImg, bgColor: "bg-[#B8E0D2]" },
   { name: "RIYA TIWARI", role: "Founder at Authique", experience: "Brand Strategist", image: riyaImg, bgColor: "bg-[#F4A6C0]" },
