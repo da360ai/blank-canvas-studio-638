@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, BookOpen, Code, Search, BarChart3, Brain, Rocket, Briefcase } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, Code, Search, BarChart3, Brain, Rocket } from "lucide-react";
 
 type MonthData = {
   month: number;
@@ -14,9 +14,8 @@ const months: MonthData[] = [
   { month: 2, phase: "Build", title: "Website Development & SEO Basics", icon: Code, topics: ["HTML5 & CSS3 Fundamentals", "WordPress & WooCommerce", "Landing Page Design & CRO", "How Search Engines Work", "Keyword Research & Analysis"] },
   { month: 3, phase: "Growth", title: "SEO Mastery & Social Media", icon: Search, topics: ["On-Page & Technical SEO", "Off-Page SEO & Link Building", "Local SEO & Google Business", "Social Media Strategy", "Content Calendar Planning"] },
   { month: 4, phase: "Scale", title: "Paid Ads & Performance Marketing", icon: BarChart3, topics: ["Google Ads (Search, Display, Video)", "Meta Ads & Lead Generation", "Campaign Budget Optimization", "Remarketing Strategies", "Google Analytics 4 & GTM"] },
-  { month: 5, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Influencer & Meme Marketing", "Media Planning & Programmatic Ads"] },
-  { month: 6, phase: "Launch", title: "Agency Building & Career Prep", icon: Rocket, topics: ["Freelancing & Agency Setup", "Client Acquisition & Pitching", "Brand PR & ORM", "Go-To-Market Strategies", "Portfolio & Resume Building"] },
-  { month: 7, phase: "Internship", title: "6-Month Paid Internship", icon: Briefcase, topics: ["Work on Live Client Projects", "Agency or In-House Placement", "Real Campaign Management", "Performance Reporting", "Industry Mentorship"] },
+  { month: 5, phase: "Launch", title: "Agency Building & Career Prep", icon: Rocket, topics: ["Freelancing & Agency Setup", "Client Acquisition & Pitching", "Brand PR & ORM", "Go-To-Market Strategies", "Portfolio & Resume Building"] },
+  { month: 6, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Influencer & Meme Marketing", "Media Planning & Programmatic Ads"] },
 ];
 
 const ProjectsSection = () => {
@@ -46,7 +45,7 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4 max-w-[1200px]">
         {/* Header */}
         <h2 className="font-heading text-2xl md:text-[48px] font-extrabold leading-tight md:leading-[1.3] text-center mb-2 text-gray-900">
-          Your 12-Month Transformation Roadmap
+          Your 6-Month Transformation Roadmap
         </h2>
         <p className="text-center text-gray-600 mb-[40px] max-w-2xl mx-auto text-sm md:text-base">
           A structured month-by-month journey from beginner to industry-ready digital marketer
@@ -77,9 +76,7 @@ const ProjectsSection = () => {
                 <span className="text-[8px] md:text-[10px] uppercase tracking-wider block opacity-60 font-semibold">
                   Month
                 </span>
-                <span className="text-sm md:text-lg font-extrabold block leading-tight">
-                  {m.month}{m.month === 7 ? "–12" : ""}
-                </span>
+                <span className="text-sm md:text-lg font-extrabold block leading-tight">{m.month}</span>
               </button>
             ))}
           </div>
@@ -123,10 +120,10 @@ const ProjectsSection = () => {
               {/* Right: Month Info */}
               <div className="shrink-0 order-2 text-right">
                 <p className="font-heading italic font-extrabold leading-none text-primary text-4xl md:text-7xl tracking-tight">
-                  {active.month === 7 ? "7–12" : `0${active.month}`}
+                  {`0${active.month}`}
                 </p>
                 <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-600 mt-2 font-bold italic">
-                  {active.month === 7 ? "6 Months" : "Month"}
+                  Month
                 </p>
               </div>
             </div>
