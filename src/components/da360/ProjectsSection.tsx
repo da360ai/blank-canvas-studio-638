@@ -14,7 +14,7 @@ const months: MonthData[] = [
   { month: 2, phase: "Build", title: "Website Development & SEO Basics", icon: Code, topics: ["HTML5 & CSS3 Fundamentals", "WordPress & WooCommerce", "Landing Page Design & CRO", "How Search Engines Work", "Keyword Research & Analysis"] },
   { month: 3, phase: "Growth", title: "SEO Mastery & Social Media", icon: Search, topics: ["On-Page & Technical SEO", "Off-Page SEO & Link Building", "Local SEO & Google Business", "Social Media Strategy", "Content Calendar Planning"] },
   { month: 4, phase: "Perform", title: "Google Ads & Performance Marketing", icon: Target, topics: ["Google Ads Fundamentals & Search", "Display, Video & Shopping Ads", "Bidding Strategies & Budgets", "Remarketing Strategies", "ROAS & CPA Optimization"] },
-  { month: 5, phase: "Analyze", title: "Advanced Digital Analytics", icon: BarChart3, topics: ["Google Analytics 4 Setup", "Event Tracking & Conversions", "Google Tag Manager", "Attribution Modeling", "Custom Reports & Dashboards"] },
+  { month: 5, phase: "Analyze & Specialize", title: "Digital Analytics + Specialisations Begin", icon: BarChart3, topics: ["Google Analytics 4 & Tag Manager", "Event Tracking & Conversions", "Attribution & Custom Dashboards", "Specialisation: SEO Mastery with AI", "Specialisation: Performance Marketing"] },
   { month: 6, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Conversion Rate Optimisation", "Go-To-Market Strategies"] },
 ];
 
