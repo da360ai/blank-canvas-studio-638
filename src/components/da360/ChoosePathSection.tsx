@@ -1,4 +1,4 @@
-import { Check, Star, ArrowRight } from "lucide-react";
+import { BadgeCheck, Check, Star, ArrowRight } from "lucide-react";
 
 const ChoosePathSection = () => (
   <section id="choose-path-section" className="section-spacing bg-background">
@@ -123,7 +123,10 @@ const ChoosePathSection = () => (
         </div>
 
         {/* Certificate - Foundation */}
-        <div className="rounded-2xl border-[2.5px] border-black bg-card text-foreground shadow-[0_4px_0_0_rgba(0,0,0,0.45)] overflow-hidden flex flex-col">
+        <div className="relative rounded-2xl border-[2.5px] border-black bg-card text-foreground shadow-[0_4px_0_0_rgba(0,0,0,0.45)] overflow-hidden flex flex-col">
+          <div className="absolute top-0 right-0 bg-accent text-accent-foreground px-3 md:px-4 py-1.5 rounded-bl-xl text-xs font-extrabold flex items-center gap-1">
+            <BadgeCheck className="h-3 w-3" /> CERTIFICATION PROGRAM
+          </div>
           <div className="p-6 pt-10 md:p-8 md:pt-12 flex flex-col flex-1">
             <span className="inline-block px-4 py-1.5 rounded-full border-2 border-black text-sm font-bold mb-4 self-start">
               For the Beginner
