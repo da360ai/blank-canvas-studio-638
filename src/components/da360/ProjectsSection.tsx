@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, BookOpen, Code, Search, BarChart3, Brain, Rocket } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, Code, Search, Brain } from "lucide-react";
 
 type MonthData = {
   month: number;
@@ -13,8 +13,6 @@ const months: MonthData[] = [
   { month: 1, phase: "Foundation", title: "Marketing & Web Fundamentals", icon: BookOpen, topics: ["Digital Marketing Principles", "Branding & Business Fundamentals", "AI Content & Prompt Engineering", "Social Media Creative Design", "Color Theory & Typography"] },
   { month: 2, phase: "Build", title: "Website Development & SEO Basics", icon: Code, topics: ["HTML5 & CSS3 Fundamentals", "WordPress & WooCommerce", "Landing Page Design & CRO", "How Search Engines Work", "Keyword Research & Analysis"] },
   { month: 3, phase: "Growth", title: "SEO Mastery & Social Media", icon: Search, topics: ["On-Page & Technical SEO", "Off-Page SEO & Link Building", "Local SEO & Google Business", "Social Media Strategy", "Content Calendar Planning"] },
-  { month: 4, phase: "Scale", title: "Paid Ads & Performance Marketing", icon: BarChart3, topics: ["Google Ads (Search, Display, Video)", "Meta Ads & Lead Generation", "Campaign Budget Optimization", "Remarketing Strategies", "Google Analytics 4 & GTM"] },
-  { month: 5, phase: "Launch", title: "Agency Building & Career Prep", icon: Rocket, topics: ["Freelancing & Agency Setup", "Client Acquisition & Pitching", "Brand PR & ORM", "Go-To-Market Strategies", "Portfolio & Resume Building"] },
   { month: 6, phase: "Specialize", title: "Advanced Specialisations", icon: Brain, topics: ["Programmatic SEO & AI Tools", "E-commerce Marketing", "Marketing Automation & MarTech", "Influencer & Meme Marketing", "Media Planning & Programmatic Ads"] },
 ];
 
