@@ -118,6 +118,17 @@ const InlineLeadForm = ({
               <option className="text-foreground" value="SDP">SDP 3 months</option>
             </select>
 
+            <select required value={learningCenter} onChange={(e) => setLearningCenter(e.target.value)} className="flex h-12 w-full rounded-lg border border-border bg-background px-4 text-base text-muted-foreground">
+              <option value="" disabled>Learning Center</option>
+              <option className="text-foreground" value="Bangalore">Bangalore</option>
+              <option className="text-foreground" value="JP Nagar">JP Nagar</option>
+              <option className="text-foreground" value="Malleswaram">Malleswaram</option>
+              <option className="text-foreground" value="Pune">Pune</option>
+              <option className="text-foreground" value="Hyderabad">Hyderabad</option>
+              <option className="text-foreground" value="Chennai">Chennai</option>
+              <option className="text-foreground" value="Online">Online</option>
+            </select>
+
             <div className="flex items-center gap-4 py-1">
               <span className="text-sm font-medium text-foreground">Mode:</span>
               <RadioGroup value={learningMode} onValueChange={setLearningMode} className="flex gap-4">
