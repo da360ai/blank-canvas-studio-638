@@ -157,7 +157,17 @@ const MentorSection = () => {
                         <Linkedin className="h-5 w-5" />
                       </a>
                     </div>
-                    <p className="text-sm text-foreground/80 mb-1">{m.role}</p>
+                    <p className="text-sm text-foreground/80 mb-2">{m.role}</p>
+                    {m.employerLogo && m.employerName && (
+                      <div className="mb-2 flex h-7 items-center">
+                        <img
+                          src={m.employerLogo}
+                          alt={`${m.employerName} logo`}
+                          className="max-h-7 max-w-[116px] object-contain object-left"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <p className="text-xs text-muted-foreground font-semibold">{m.experience}</p>
                   </div>
                 </div>
