@@ -1,7 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import TopBanner from "@/components/da360/TopBanner";
 import Navbar from "@/components/da360/Navbar";
-import ScholarshipBar from "@/components/da360/ScholarshipBar";
 import HeroSection from "@/components/da360/HeroSection";
 
 // Below-the-fold sections are lazy-loaded to keep initial bundle small
@@ -10,7 +9,6 @@ const VideoPopup = lazy(() => import("@/components/da360/VideoPopup"));
 const SocialProofStrip = lazy(() => import("@/components/da360/SocialProofStrip"));
 const AlumniCompaniesSection = lazy(() => import("@/components/da360/AlumniCompaniesSection"));
 const SpotlightSection = lazy(() => import("@/components/da360/SpotlightSection"));
-const PainPointSection = lazy(() => import("@/components/da360/PainPointSection"));
 const WhoIsThisFor = lazy(() => import("@/components/da360/WhoIsThisFor"));
 const SuccessStoriesSection = lazy(() => import("@/components/da360/SuccessStoriesSection"));
 const TestimonialsSection = lazy(() => import("@/components/da360/TestimonialsSection"));
@@ -31,7 +29,7 @@ const Footer = lazy(() => import("@/components/da360/Footer"));
  * CRO-Optimized Section Order (AIDA Framework)
  * ─────────────────────────────────────────────
  * ATTENTION:  Hero → Social Proof → Logos → Media Spotlight
- * INTEREST:   Pain Points → Who Is This For
+ * INTEREST:   Who Is This For
  * DESIRE:     Success Stories → Testimonials → Programs → Highlights →
  *             Curriculum → Roadmap → Advantages → Mentors → Comparison → Outcomes
  * TRUST:      Trusted By → Risk Reversal
@@ -47,7 +45,6 @@ const Index = () => {
       <TopBanner onClose={() => setBannerVisible(false)} />
       <div style={{ paddingTop: topOffset }}>
         <Navbar topOffset={topOffset} />
-        <ScholarshipBar />
 
         {/* ── ATTENTION ── */}
         <HeroSection />
@@ -59,7 +56,6 @@ const Index = () => {
           <AlumniCompaniesSection />
 
           {/* ── INTEREST ── */}
-          <PainPointSection />
           <WhoIsThisFor />
           <SpotlightSection />
 
