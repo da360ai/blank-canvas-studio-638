@@ -57,12 +57,13 @@ const Index = () => {
           <AlumniCompaniesSection />
 
             {/* ── DESIRE ── */}
-           <SuccessStoriesSection />
-           <ChoosePathSection />
-           <CurriculumSection />
-           <ProjectsSection />
-           <TestimonialsSection />
-           <ValuePillars />
+            <SuccessStoriesSection />
+            <ChoosePathSection />
+            <CurriculumSection />
+            <ProjectsSection />
+            <TestimonialsSection />
+            <LifeAtDA360 />
+            <ValuePillars />
            <BookDemoSection />
           <MentorSection />
 
