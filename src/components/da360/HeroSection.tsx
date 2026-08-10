@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { CheckCircle } from "lucide-react";
-import { useBatchCountdown } from "@/hooks/use-batch-countdown";
+
 import { submitLead } from "@/lib/leadSubmit";
 import { OtpModal } from "@/components/da360/OtpModal";
 import skillIndiaLogo from "@/assets/logos/skill-india.png";
