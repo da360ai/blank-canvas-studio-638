@@ -1,4 +1,5 @@
 import { GraduationCap, Rocket, Target, ArrowRight } from "lucide-react";
+import CTAButton from "@/components/da360/CTAButton";
 
 const pillars = [
   {
@@ -105,15 +106,16 @@ const ValuePillars = () => (
         </div>
       </div>
 
-      {/* Single CTA below */}
-      <div className="text-center mt-10 md:mt-14">
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-bold text-sm md:text-base border-2 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.45)] hover:scale-105 transition-transform duration-300"
-        >
-          See the full advantage <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
+       {/* Single CTA below */}
+       <div className="text-center mt-10 md:mt-14">
+         <CTAButton
+           noShadow
+           formLabel="See the full advantage"
+           className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-bold text-sm md:text-base border-2 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.45)] hover:scale-105 transition-transform duration-300"
+         >
+           See the full advantage <ArrowRight className="h-4 w-4" />
+         </CTAButton>
+       </div>
     </div>
   </section>
 );

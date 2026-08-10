@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, Code, Search, Target, BarChart3, Brain } from "lucide-react";
+import CTAButton from "@/components/da360/CTAButton";
 
 type MonthData = {
   month: number;
@@ -148,12 +149,13 @@ const ProjectsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-8 md:mt-10">
-          <a
-            href="#"
+          <CTAButton
+            noShadow
+            formLabel="Book Free Class Now"
             className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm md:text-base border-[2.5px] border-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,0.45)] hover:scale-105 transition-transform"
           >
             Book Free Class Now
-          </a>
+          </CTAButton>
         </div>
       </div>
     </section>
