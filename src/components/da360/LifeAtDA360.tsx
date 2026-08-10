@@ -10,23 +10,23 @@ interface LifeVideo {
 const fallbackSlides: LifeVideo[] = [
   {
     title: "AI IN DIGITAL MARKETING BOOTCAMP",
-    img: "/videos/thumbs/ankita.jpg",
+    img: "/life-at-da360/craetor-min.jpg",
     videoUrl: "https://asset.digitalacademy360.com/creatorstable.mp4",
   },
   {
     title: "STATE OF THE ART FACILITIES",
-    img: "/videos/thumbs/madhu.jpg",
+    img: "/life-at-da360/TOOB-min.jpg",
     videoUrl: "https://asset.digitalacademy360.com/reel-mastery-da360.mp4",
   },
   {
     title: "EVENTS & WORKSHOPS",
-    img: "/videos/thumbs/nivedh.jpg",
+    img: "/life-at-da360/Onam-min.jpg",
     videoUrl: "https://asset.digitalacademy360.com/onam-da360.mp4",
   },
   {
-    title: "PLACEMENT DRIVES",
-    img: "/videos/thumbs/vinayak.jpg",
-    videoUrl: "https://asset.digitalacademy360.com/digital-marketing-placement.mp4",
+    title: "EVENTS & WORKSHOPS",
+    img: "/life-at-da360/teacher-min.jpg",
+    videoUrl: "https://asset.digitalacademy360.com/teachersday.mp4",
   },
 ];
 
@@ -38,7 +38,7 @@ interface LifeAtDA360Props {
 
 const LifeAtDA360 = ({
   headerTitle = "Life @DA360",
-  description = "Break boundaries with skill-driven battles and innovation challenges",
+  description = "Break Boundaries with Skill-Driven Battles and Innovation Challenges",
   lifeVideos = [],
 }: LifeAtDA360Props) => {
   const slides = lifeVideos.length > 0 ? lifeVideos : fallbackSlides;
