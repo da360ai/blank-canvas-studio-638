@@ -8,6 +8,8 @@ import { CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { submitLead } from "@/lib/leadSubmit";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 interface InlineLeadFormProps {
   heading: string;
   subheading?: string;
@@ -36,16 +38,28 @@ const InlineLeadForm = ({
   const [learningCenter, setLearningCenter] = useState("");
   const [learningMode, setLearningMode] = useState("online");
   const [authorized, setAuthorized] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const isDark = variant === "dark";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (submitting) return;
+
+    if (!fullName.trim()) return setError("Please enter your full name.");
+    if (!EMAIL_RE.test(email.trim())) return setError("Please enter a valid email address.");
+    if (!/^\d{7,15}$/.test(mobile.replace(/\D/g, ""))) return setError("Please enter a valid mobile number.");
+    if (!experience) return setError("Please select your work experience.");
+    if (!course) return setError("Please select a course.");
+    if (!learningCenter) return setError("Please select a learning center.");
+    if (!learningMode) return setError("Please select a learning mode.");
+    if (!authorized) return setError("Please accept the consent to continue.");
+    setError(null);
+
     setSubmitting(true);
     await submitLead({
       source: source ?? `inline:${heading}`,
-      fullName,
-      email,
+      fullName: fullName.trim(),
+      email: email.trim(),
       countryCode,
        mobile,
        experience,
@@ -87,7 +101,9 @@ const InlineLeadForm = ({
           <div className="py-8 text-center">
             <CheckCircle className="h-12 w-12 text-primary mx-auto mb-3" />
             <h4 className="font-heading text-lg font-bold text-foreground mb-1">Thank You!</h4>
-            <p className="text-muted-foreground text-sm">Our counsellor will reach out within 24 hours.</p>
+            <p className="text-muted-foreground text-sm">
+              Your details have been submitted successfully. Our counsellor will reach out within 24 hours.
+            </p>
           </div>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -150,6 +166,7 @@ const InlineLeadForm = ({
             <Button type="submit" disabled={submitting} className="w-full bg-foreground hover:bg-primary hover:text-primary-foreground text-background font-heading font-bold text-base py-5 rounded-full transition-colors duration-200">
               {submitting ? "Submitting..." : submitLabel}
             </Button>
+            {error && <p className="text-sm font-medium text-destructive">{error}</p>}
           </form>
         )}
       </div>
