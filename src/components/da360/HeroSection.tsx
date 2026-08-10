@@ -4,10 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Clock, AlertCircle, CheckCircle } from "lucide-react";
+import { Clock, CheckCircle } from "lucide-react";
 import { useBatchCountdown } from "@/hooks/use-batch-countdown";
 import { submitLead } from "@/lib/leadSubmit";
 import { OtpModal } from "@/components/da360/OtpModal";
+import skillIndiaLogo from "@/assets/logos/skill-india.png";
+import mescLogo from "@/assets/logos/mesc.png";
+import nsdcLogo from "@/assets/logos/nsdc.png";
 
 const HeroSection = () => {
   const [persona, setPersona] = useState<"fresher" | "professional">("fresher");
@@ -106,11 +109,10 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 rounded-lg px-3 py-2">
-                <AlertCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                <p className="text-xs font-bold text-foreground">
-                  Unlock <span className="text-primary">Rs 20,000 Scholarship</span> — Only 10 seats remaining
-                </p>
+              <div className="flex items-center justify-center gap-3 rounded-lg border border-border bg-background px-3 py-2">
+                <img src={skillIndiaLogo} alt="Skill India" className="h-8 w-auto object-contain" />
+                <img src={mescLogo} alt="MESC" className="h-8 w-auto object-contain" />
+                <img src={nsdcLogo} alt="NSDC Digital" className="h-8 w-auto object-contain" />
               </div>
             </div>
 
