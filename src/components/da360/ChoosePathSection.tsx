@@ -1,4 +1,5 @@
 import { BadgeCheck, Check, Star, ArrowRight } from "lucide-react";
+import CTAButton from "@/components/da360/CTAButton";
 
 const ChoosePathSection = () => (
   <section id="choose-path-section" className="section-spacing bg-background">
@@ -69,12 +70,14 @@ const ChoosePathSection = () => (
             <p className="text-white/50 text-xs italic mb-4 md:mb-5">
               Built for those who want to run the room, not just the campaign.
             </p>
-            <a
-              href="#"
-              className="mt-auto inline-flex items-center gap-2 w-full justify-center px-6 py-3 md:py-3.5 rounded-full bg-accent text-accent-foreground font-bold text-sm md:text-base border-2 border-accent shadow-[0_4px_0_0_rgba(0,0,0,0.35)] hover:scale-105 transition-all duration-300"
+            <CTAButton
+              fullWidth
+              noShadow
+              formLabel="Apply for Leadership"
+              className="mt-auto inline-flex items-center gap-2 justify-center px-6 py-3 md:py-3.5 rounded-full bg-accent text-accent-foreground font-bold text-sm md:text-base border-2 border-accent shadow-[0_4px_0_0_rgba(0,0,0,0.35)] hover:scale-105 transition-all duration-300"
             >
               Apply for Leadership <ArrowRight className="h-4 w-4" />
-            </a>
+            </CTAButton>
           </div>
         </div>
 
@@ -113,12 +116,15 @@ const ChoosePathSection = () => (
             <p className="text-muted-foreground text-xs italic mb-4 md:mb-5">
               Built for those who want to master every digital marketing channel.
             </p>
-            <a
-              href="#"
-              className="mt-auto inline-flex items-center gap-2 w-full justify-center px-6 py-3 md:py-3.5 rounded-full border-2 border-black text-foreground font-bold text-sm md:text-base hover:bg-black hover:text-white transition-colors"
+            <CTAButton
+              fullWidth
+              noShadow
+              variant="outline"
+              formLabel="Explore PGCP"
+              className="mt-auto inline-flex items-center gap-2 justify-center px-6 py-3 md:py-3.5 rounded-full border-2 border-black text-foreground font-bold text-sm md:text-base hover:bg-black hover:text-white transition-colors"
             >
               Explore PGCP <ArrowRight className="h-4 w-4" />
-            </a>
+            </CTAButton>
           </div>
         </div>
 
@@ -156,12 +162,15 @@ const ChoosePathSection = () => (
             <p className="text-muted-foreground text-xs italic mb-4 md:mb-5">
               Built for those who want to start fast and earn job-ready skills in 3 months.
             </p>
-            <a
-              href="#"
-              className="mt-auto inline-flex items-center gap-2 w-full justify-center px-6 py-3 md:py-3.5 rounded-full border-2 border-black text-foreground font-bold text-sm md:text-base hover:bg-black hover:text-white transition-colors"
+            <CTAButton
+              fullWidth
+              noShadow
+              variant="outline"
+              formLabel="Explore Certificate"
+              className="mt-auto inline-flex items-center gap-2 justify-center px-6 py-3 md:py-3.5 rounded-full border-2 border-black text-foreground font-bold text-sm md:text-base hover:bg-black hover:text-white transition-colors"
             >
               Explore Certificate <ArrowRight className="h-4 w-4" />
-            </a>
+            </CTAButton>
           </div>
         </div>
       </div>
@@ -176,12 +185,13 @@ const ChoosePathSection = () => (
             Everything you need to make your decision in one brochure.
           </p>
         </div>
-        <a
-          href="#"
+        <CTAButton
+          noShadow
+          formLabel="Download Brochure"
           className="shrink-0 px-6 md:px-8 py-3 rounded-full bg-foreground text-white font-bold text-sm md:text-base border-2 border-black hover:opacity-90 transition-colors"
         >
           Download Brochure
-        </a>
+        </CTAButton>
       </div>
     </div>
   </section>

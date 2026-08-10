@@ -5,6 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { CheckCircle } from "lucide-react";
+import CTAButton from "@/components/da360/CTAButton";
 
 import { submitLead } from "@/lib/leadSubmit";
 import { OtpModal } from "@/components/da360/OtpModal";
@@ -97,16 +98,13 @@ const HeroSection = () => {
                <img src={nsdcLogo} alt="NSDC Digital" className="h-20 md:h-24 w-auto object-contain" />
              </div>
 
-            <Button
-              type="button"
-              onClick={() => {
-                const el = document.getElementById("choose-path-section");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-bold text-base px-8 py-5 md:py-6 rounded-full"
-            >
-              Explore Course
-            </Button>
+             <CTAButton
+               noShadow
+               formLabel="Explore Course"
+               className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-bold text-base px-8 py-5 md:py-6 rounded-full"
+             >
+               Explore Course
+             </CTAButton>
           </div>
 
           {/* Right — Lead Form */}
