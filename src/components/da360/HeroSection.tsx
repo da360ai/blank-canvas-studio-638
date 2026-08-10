@@ -13,6 +13,8 @@ import skillIndiaLogo from "@/assets/logos/skill-india.png";
 import mescLogo from "@/assets/logos/mesc.png";
 import nsdcLogo from "@/assets/logos/nsdc.png";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const HeroSection = () => {
   const [persona, setPersona] = useState<"fresher" | "professional">("fresher");
 
@@ -31,11 +33,23 @@ const HeroSection = () => {
   const [showOtp, setShowOtp] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Called when user clicks Submit → open OTP modal (don't hit CRM yet)
   const handleHeroSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (submitting) return;
+
+    if (!fullName.trim()) return setError("Please enter your full name.");
+    if (!EMAIL_RE.test(email.trim())) return setError("Please enter a valid email address.");
+    if (!/^\d{7,15}$/.test(mobile.replace(/\D/g, ""))) return setError("Please enter a valid mobile number.");
+    if (!experience) return setError("Please select your work experience.");
+    if (!course) return setError("Please select a course.");
+    if (!learningCenter) return setError("Please select a learning center.");
+    if (!learningMode) return setError("Please select a learning mode.");
+    if (!authorized) return setError("Please accept the consent to continue.");
+    setError(null);
+
     setShowOtp(true); // open OTP modal
   };
 
@@ -46,8 +60,8 @@ const HeroSection = () => {
 
     await submitLead({
       source: "hero",
-      fullName,
-      email,
+      fullName: fullName.trim(),
+      email: email.trim(),
       countryCode,
       mobile,
       experience,
@@ -121,7 +135,9 @@ const HeroSection = () => {
                 <div className="py-10 text-center">
                   <CheckCircle className="h-12 w-12 text-primary mx-auto mb-3" />
                   <h4 className="font-heading text-lg font-bold text-foreground mb-1">Thank You!</h4>
-                  <p className="text-muted-foreground text-sm">Our counsellor will reach out within 24 hours.</p>
+                  <p className="text-muted-foreground text-sm">
+                    Your details have been submitted successfully. Our counsellor will reach out within 24 hours.
+                  </p>
                 </div>
               ) : (
                 <form className="space-y-4 md:space-y-5" onSubmit={handleHeroSubmit}>
@@ -240,6 +256,7 @@ const HeroSection = () => {
                   >
                     {submitting ? "Submitting…" : showOtp ? "Sending OTP…" : "Submit"}
                   </Button>
+                  {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 </form>
               )}
             </div>
