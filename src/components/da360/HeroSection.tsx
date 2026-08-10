@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -16,6 +17,7 @@ import nsdcLogo from "@/assets/logos/nsdc.png";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [persona, setPersona] = useState<"fresher" | "professional">("fresher");
 
   // Form fields
@@ -74,9 +76,7 @@ const HeroSection = () => {
     setSubmitting(false);
     setSubmitted(true);
     setFullName(""); setEmail(""); setMobile(""); setExperience(""); setCourse(""); setLearningCenter("");
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 1500);
+    navigate("/thank-you");
   };
 
   return (
