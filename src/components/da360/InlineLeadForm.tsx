@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -27,6 +28,7 @@ const InlineLeadForm = ({
   className,
   source,
 }: InlineLeadFormProps) => {
+  const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [fullName, setFullName] = useState("");
@@ -69,16 +71,14 @@ const InlineLeadForm = ({
        authorized,
     });
     setSubmitting(false);
-     setSubmitted(true);
+    setSubmitted(true);
     setFullName("");
     setEmail("");
-     setMobile("");
-     setExperience("");
-     setCourse("");
-     setLearningCenter("");
-     setTimeout(() => {
-       window.location.href = "/";
-     }, 1500);
+    setMobile("");
+    setExperience("");
+    setCourse("");
+    setLearningCenter("");
+    navigate("/thank-you");
   };
 
   return (
