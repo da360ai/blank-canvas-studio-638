@@ -91,10 +91,10 @@ const HeroSection = () => {
             </div>
 
              {/* Accreditation logos */}
-             <div className="flex items-center justify-center gap-5 rounded-xl border border-foreground/10 bg-white px-5 py-4 max-w-sm">
-               <img src={skillIndiaLogo} alt="Skill India" className="h-12 md:h-14 w-auto object-contain" />
-               <img src={mescLogo} alt="MESC" className="h-12 md:h-14 w-auto object-contain" />
-               <img src={nsdcLogo} alt="NSDC Digital" className="h-12 md:h-14 w-auto object-contain" />
+             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+               <img src={skillIndiaLogo} alt="Skill India" className="h-20 md:h-24 w-auto object-contain" />
+               <img src={mescLogo} alt="MESC" className="h-20 md:h-24 w-auto object-contain" />
+               <img src={nsdcLogo} alt="NSDC Digital" className="h-20 md:h-24 w-auto object-contain" />
              </div>
 
             <Button
