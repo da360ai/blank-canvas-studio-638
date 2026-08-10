@@ -148,6 +148,9 @@ export const submitLeadToCrm = async (
 /** @deprecated Use sendOtp + OtpModal + submitLeadToCrm instead */
 export const submitLead = submitLeadToCrm;
 
+/** Canonical name for the one reusable submission function. */
+export const handleFormSubmit = submitLeadToCrm;
+
 // Stubs kept for backward compatibility with App.tsx
 export const getWebhookUrl = (): string | null => null;
 export const setWebhookUrl = (_url: string): void => {};
