@@ -91,30 +91,12 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Countdown */}
-            <div className="bg-white rounded-xl border border-foreground/10 p-3 space-y-2 max-w-sm">
-              <p className="text-xs text-foreground font-bold flex items-center gap-1.5">
-                <Clock className="h-3.5 w-3.5 text-primary" /> Next batch closing in:
-              </p>
-              <div className="flex gap-2">
-                {[
-                  { val: days, label: "Days" },
-                  { val: hours, label: "Hrs" },
-                  { val: mins, label: "Min" },
-                  { val: secs, label: "Sec" },
-                ].map(({ val, label }) => (
-                  <div key={label} className="bg-background border border-foreground/10 rounded-lg px-2.5 md:px-3 py-2 text-center min-w-[44px] md:min-w-[50px]">
-                    <div className="text-base md:text-lg font-extrabold text-foreground font-heading">{String(val).padStart(2, "0")}</div>
-                    <div className="text-[10px] text-muted-foreground">{label}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center justify-center gap-3 rounded-lg border border-border bg-background px-3 py-2">
-                <img src={skillIndiaLogo} alt="Skill India" className="h-8 w-auto object-contain" />
-                <img src={mescLogo} alt="MESC" className="h-8 w-auto object-contain" />
-                <img src={nsdcLogo} alt="NSDC Digital" className="h-8 w-auto object-contain" />
-              </div>
-            </div>
+             {/* Accreditation logos */}
+             <div className="flex items-center justify-center gap-5 rounded-xl border border-foreground/10 bg-white px-5 py-4 max-w-sm">
+               <img src={skillIndiaLogo} alt="Skill India" className="h-12 md:h-14 w-auto object-contain" />
+               <img src={mescLogo} alt="MESC" className="h-12 md:h-14 w-auto object-contain" />
+               <img src={nsdcLogo} alt="NSDC Digital" className="h-12 md:h-14 w-auto object-contain" />
+             </div>
 
             <Button
               type="button"
