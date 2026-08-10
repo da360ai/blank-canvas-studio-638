@@ -91,7 +91,7 @@ const HeroSection = () => {
             </div>
 
              {/* Accreditation logos */}
-             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+             <div className="flex flex-wrap items-center justify-start gap-6 md:gap-8">
                <img src={skillIndiaLogo} alt="Skill India" className="h-20 md:h-24 w-auto object-contain" />
                <img src={mescLogo} alt="MESC" className="h-20 md:h-24 w-auto object-contain" />
                <img src={nsdcLogo} alt="NSDC Digital" className="h-20 md:h-24 w-auto object-contain" />
