@@ -109,11 +109,10 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 rounded-lg px-3 py-2">
-                <AlertCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                <p className="text-xs font-bold text-foreground">
-                  Unlock <span className="text-primary">Rs 20,000 Scholarship</span> — Only 10 seats remaining
-                </p>
+              <div className="flex items-center justify-center gap-3 rounded-lg border border-border bg-background px-3 py-2">
+                <img src={skillIndiaLogo} alt="Skill India" className="h-8 w-auto object-contain" />
+                <img src={mescLogo} alt="MESC" className="h-8 w-auto object-contain" />
+                <img src={nsdcLogo} alt="NSDC Digital" className="h-8 w-auto object-contain" />
               </div>
             </div>
 
