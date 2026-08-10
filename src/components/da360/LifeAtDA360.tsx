@@ -24,8 +24,8 @@ const fallbackSlides: LifeVideo[] = [
     videoUrl: "https://asset.digitalacademy360.com/onam-da360.mp4",
   },
   {
-    title: "EVENTS & WORKSHOPS",
-    img: "/life-at-da360/teacher-min.jpg",
+    title: "PLACEMENT DRIVE 2025",
+    img: "/life-at-da360/placement-drive.png",
     videoUrl: "https://asset.digitalacademy360.com/teachersday.mp4",
   },
 ];
@@ -89,9 +89,9 @@ const LifeAtDA360 = ({
               return (
                 <article
                   key={`${slide.title}-${index}`}
-                  className={`group relative overflow-hidden rounded-2xl border-2 border-foreground bg-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${isMobile ? "w-[78vw] max-w-[320px] shrink-0 snap-start" : "w-full"}`}
+                  className={`group relative overflow-hidden rounded-2xl bg-card ${isMobile ? "w-[70vw] max-w-[300px] shrink-0 snap-start" : "w-full"}`}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden bg-foreground">
+                  <div className="relative aspect-[9/16] overflow-hidden rounded-2xl bg-foreground">
                     {isPlaying ? (
                       <video
                         src={slide.videoUrl}
@@ -111,11 +111,11 @@ const LifeAtDA360 = ({
                           loading="lazy"
                           decoding="async"
                         />
-                        <div className="absolute inset-0 bg-foreground/25 transition-colors group-hover:bg-foreground/40" />
+                        <div className="absolute inset-0 bg-foreground/10 transition-colors group-hover:bg-foreground/25" />
                         <button
                           type="button"
                           onClick={() => setPlayingIndex(index)}
-                          className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-primary-foreground bg-primary text-primary-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-transform hover:scale-110"
+                          className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground/60 text-primary-foreground backdrop-blur-sm transition-transform hover:scale-110"
                           aria-label={`Play ${slide.title}`}
                         >
                           <Play className="ml-1 h-6 w-6" fill="currentColor" />
@@ -134,12 +134,7 @@ const LifeAtDA360 = ({
                       </button>
                     )}
                   </div>
-                  <div className="min-h-[76px] bg-card px-4 py-4">
-                    <h3 className="font-heading text-sm font-extrabold uppercase leading-tight text-card-foreground md:text-base">
-                      {slide.title}
-                    </h3>
-                    <p className="mt-1 text-xs text-card-foreground/60">Discover the DA360 experience</p>
-                  </div>
+                  <span className="sr-only">{slide.title}</span>
                 </article>
               );
             })}
