@@ -4,10 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Clock, AlertCircle, CheckCircle } from "lucide-react";
+import { Clock, CheckCircle } from "lucide-react";
 import { useBatchCountdown } from "@/hooks/use-batch-countdown";
 import { submitLead } from "@/lib/leadSubmit";
 import { OtpModal } from "@/components/da360/OtpModal";
+import skillIndiaLogo from "@/assets/logos/skill-india.png";
+import mescLogo from "@/assets/logos/mesc.png";
+import nsdcLogo from "@/assets/logos/nsdc.png";
 
 const HeroSection = () => {
   const [persona, setPersona] = useState<"fresher" | "professional">("fresher");
