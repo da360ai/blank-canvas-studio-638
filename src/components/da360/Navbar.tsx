@@ -1,9 +1,6 @@
 import { Phone } from "lucide-react";
 import CTAButton from "@/components/da360/CTAButton";
 import da360Logo from "@/assets/da360-logo.png";
-import skillIndiaLogo from "@/assets/logos/skill-india.png";
-import mescLogo from "@/assets/logos/mesc.png";
-import nsdcLogo from "@/assets/logos/nsdc.png";
 
 const Navbar = ({ topOffset = "0px" }: { topOffset?: string }) => {
   return (
