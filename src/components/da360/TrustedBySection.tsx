@@ -43,8 +43,8 @@ const TrustedBySection = () => (
       <p className="text-black/70 font-body text-sm md:text-lg max-w-2xl mx-auto mb-[40px] leading-relaxed">
         Not only learn but also earn a 6-month paid Internship after 6 months of Learning.
         <br className="hidden md:block" />
-        Join the 50,000+ community of digital marketers who trusted us for Leadership in
-        digital marketing and AI Program.
+         Join the 1,00,000+ community of digital marketers who trusted us for Leadership in
+         digital marketing and AI Program.
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">

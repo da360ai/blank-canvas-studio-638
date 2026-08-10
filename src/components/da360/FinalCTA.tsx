@@ -9,7 +9,7 @@ const FinalCTA = () => (
         Starts Here
       </h2>
       <p className="text-dark-foreground/60 mb-[40px] max-w-lg mx-auto text-base md:text-lg">
-        Don't just learn digital marketing. Lead it. Join 50,000+ alumni who transformed their careers.
+        Don't just learn digital marketing. Lead it. Join 1,00,000+ alumni who transformed their careers.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
