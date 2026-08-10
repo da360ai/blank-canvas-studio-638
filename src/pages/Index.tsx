@@ -12,6 +12,7 @@ const AlumniCompaniesSection = lazy(() => import("@/components/da360/AlumniCompa
 
 const SuccessStoriesSection = lazy(() => import("@/components/da360/SuccessStoriesSection"));
 const TestimonialsSection = lazy(() => import("@/components/da360/TestimonialsSection"));
+const LifeAtDA360 = lazy(() => import("@/components/da360/LifeAtDA360"));
 const ChoosePathSection = lazy(() => import("@/components/da360/ChoosePathSection"));
 const ProjectsSection = lazy(() => import("@/components/da360/ProjectsSection"));
 const ValuePillars = lazy(() => import("@/components/da360/ValuePillars"));
