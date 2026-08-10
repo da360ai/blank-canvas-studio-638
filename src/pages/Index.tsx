@@ -9,7 +9,7 @@ const VideoPopup = lazy(() => import("@/components/da360/VideoPopup"));
 const SocialProofStrip = lazy(() => import("@/components/da360/SocialProofStrip"));
 const AlumniCompaniesSection = lazy(() => import("@/components/da360/AlumniCompaniesSection"));
 
-const WhoIsThisFor = lazy(() => import("@/components/da360/WhoIsThisFor"));
+
 const SuccessStoriesSection = lazy(() => import("@/components/da360/SuccessStoriesSection"));
 const TestimonialsSection = lazy(() => import("@/components/da360/TestimonialsSection"));
 const ChoosePathSection = lazy(() => import("@/components/da360/ChoosePathSection"));
@@ -55,10 +55,7 @@ const Index = () => {
           <SocialProofStrip />
           <AlumniCompaniesSection />
 
-          {/* ── INTEREST ── */}
-          <WhoIsThisFor />
-
-          {/* ── DESIRE ── */}
+           {/* ── DESIRE ── */}
           <SuccessStoriesSection />
           <TestimonialsSection />
           <ChoosePathSection />
