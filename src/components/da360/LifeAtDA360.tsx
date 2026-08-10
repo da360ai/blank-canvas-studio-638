@@ -38,7 +38,7 @@ interface LifeAtDA360Props {
 
 const LifeAtDA360 = ({
   headerTitle = "Life @DA360",
-  description = "Break boundaries with skill-driven battles and innovation challenges",
+  description = "Break Boundaries with Skill-Driven Battles and Innovation Challenges",
   lifeVideos = [],
 }: LifeAtDA360Props) => {
   const slides = lifeVideos.length > 0 ? lifeVideos : fallbackSlides;
