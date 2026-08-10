@@ -55,10 +55,7 @@ const Index = () => {
           <SocialProofStrip />
           <AlumniCompaniesSection />
 
-          {/* ── INTEREST ── */}
-          <WhoIsThisFor />
-
-          {/* ── DESIRE ── */}
+           {/* ── DESIRE ── */}
           <SuccessStoriesSection />
           <TestimonialsSection />
           <ChoosePathSection />
