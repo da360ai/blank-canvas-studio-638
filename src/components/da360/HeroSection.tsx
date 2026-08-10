@@ -14,7 +14,6 @@ import nsdcLogo from "@/assets/logos/nsdc.png";
 
 const HeroSection = () => {
   const [persona, setPersona] = useState<"fresher" | "professional">("fresher");
-  const { days, hours, mins, secs } = useBatchCountdown();
 
   // Form fields
   const [fullName, setFullName] = useState("");
