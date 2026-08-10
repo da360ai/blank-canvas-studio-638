@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Clock, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useBatchCountdown } from "@/hooks/use-batch-countdown";
 import { submitLead } from "@/lib/leadSubmit";
 import { OtpModal } from "@/components/da360/OtpModal";
