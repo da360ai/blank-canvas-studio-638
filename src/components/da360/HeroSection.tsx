@@ -60,7 +60,9 @@ const HeroSection = () => {
     setSubmitting(false);
     setSubmitted(true);
     setFullName(""); setEmail(""); setMobile(""); setExperience(""); setCourse(""); setLearningCenter("");
-    setTimeout(() => setSubmitted(false), 4000);
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 1500);
   };
 
   return (
