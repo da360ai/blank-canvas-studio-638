@@ -1,6 +1,11 @@
 // Centralized lead submission with OTP verification.
 // Flow: sendOtp() → user enters OTP → verifyAndSubmit() checks OTP → if match, calls dataapi2.php
 
+import { getTrackingParams } from "@/lib/tracking";
+
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxQHCLNyuB4zZk0BfwqNMoUc160pFnGsERxgBGC2XjFvDcNdI8dI1PpcKlWguzcu9Or/exec";
+
 export interface LeadPayload {
   source: string;
   fullName: string;
@@ -71,7 +76,44 @@ const buildApiPayload = (payload: LeadPayload) => ({
 });
 
 /**
- * Submits the lead to the CRM. Call this ONLY after OTP is verified.
+ * Posts the lead to the Google Apps Script Web App (Google Sheets).
+ * Simple request only: URLSearchParams body, no custom headers, no preflight.
+ */
+const submitLeadToSheet = async (payload: LeadPayload): Promise<void> => {
+  const utm = getTrackingParams();
+  const formData = new URLSearchParams();
+  formData.append("fullName", payload.fullName);
+  formData.append("email", payload.email);
+  formData.append("countryCode", payload.countryCode.split(" ")[0]);
+  formData.append("mobileNumber", payload.mobile);
+  formData.append("workExperience", payload.experience);
+  formData.append("course", payload.course || "");
+  formData.append("learningCenter", payload.learningCenter || "");
+  formData.append(
+    "mode",
+    payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online"
+  );
+  formData.append("consent", payload.authorized ? "Yes" : "No");
+  formData.append("cta", payload.source);
+  formData.append("sourceUrl", payload.pageUrl);
+  formData.append("utm_source", utm.utm_source);
+  formData.append("utm_medium", utm.utm_medium);
+  formData.append("utm_campaign", utm.utm_campaign);
+  formData.append("utm_term", utm.utm_term);
+  formData.append("utm_content", utm.utm_content);
+  formData.append("gclid", utm.gclid);
+  formData.append("fbclid", utm.fbclid);
+
+  try {
+    await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData });
+  } catch (err) {
+    console.error("[lead] sheet submit failed", err);
+  }
+};
+
+/**
+ * Single reusable submission function used by every CTA / popup form.
+ * Sends the lead to Google Sheets and to the CRM.
  */
 export const submitLeadToCrm = async (
   data: Omit<LeadPayload, "submittedAt" | "pageUrl" | "referrer">
@@ -83,7 +125,7 @@ export const submitLeadToCrm = async (
     referrer: typeof document !== "undefined" ? document.referrer : "",
   };
 
-  console.log("[lead]", payload);
+  await submitLeadToSheet(payload);
 
   try {
     const res = await fetch("https://api.digitalacademy360.com/dataapi2.php", {
@@ -105,6 +147,9 @@ export const submitLeadToCrm = async (
 
 /** @deprecated Use sendOtp + OtpModal + submitLeadToCrm instead */
 export const submitLead = submitLeadToCrm;
+
+/** Canonical name for the one reusable submission function. */
+export const handleFormSubmit = submitLeadToCrm;
 
 // Stubs kept for backward compatibility with App.tsx
 export const getWebhookUrl = (): string | null => null;
