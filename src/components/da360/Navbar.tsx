@@ -8,6 +8,9 @@ const Navbar = ({ topOffset = "0px" }: { topOffset?: string }) => {
       <div className="container mx-auto px-4 md:px-12 lg:px-16 py-2.5 md:py-3 flex items-center justify-between">
         <div className="flex items-center gap-3 md:gap-4">
           <img src={da360Logo} alt="Digital Academy 360" className="h-10 md:h-14 object-contain" />
+          <span className="hidden sm:inline-block text-xs md:text-sm font-heading font-bold text-foreground/80 border-l border-border pl-3 md:pl-4">
+            Malleshwaram
+          </span>
         </div>
 
         <div className="flex items-center gap-3 md:gap-4">
