@@ -49,12 +49,18 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 items-start">
         {/* Column 1: Brand + Accreditation */}
         <div>
-          <img
-            src={da360Logo}
-            alt="Digital Academy 360"
-            className="h-12 md:h-14 object-contain mb-5 -ml-1"
-            style={{ filter: "brightness(0) invert(1)" }}
-          />
+          <div className="flex items-center gap-3 md:gap-4 mb-5">
+            <img
+              src={da360Logo}
+              alt="Digital Academy 360"
+              className="h-12 md:h-14 object-contain -ml-1"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+            <div className="border-l border-white/20 pl-3 md:pl-4">
+              <p className="text-sm md:text-base font-heading font-bold text-white leading-tight">Malleshwaram</p>
+              <p className="text-xs text-white/50 leading-tight">a unit of DA360</p>
+            </div>
+          </div>
           <h4 className="font-heading font-bold text-white mb-3 text-sm">Accredited by</h4>
           <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2.5 w-fit">
             <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-8 md:h-10 object-contain" />
