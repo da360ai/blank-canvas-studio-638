@@ -45,42 +45,62 @@ const Footer = () => (
     </div>
 
     {/* Main Footer */}
-    <div className="container mx-auto px-4 py-10 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
-        {/* Left: Logo + Accredited By */}
+    <div className="container mx-auto px-4 py-12 md:py-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 items-start">
+        {/* Column 1: Brand + Accreditation */}
         <div>
           <img
             src={da360Logo}
             alt="Digital Academy 360"
-            className="h-12 md:h-14 object-contain mb-5 md:mb-6 -ml-1"
+            className="h-12 md:h-14 object-contain mb-5 -ml-1"
             style={{ filter: "brightness(0) invert(1)" }}
           />
-          <h4 className="font-heading font-bold text-white mb-3 text-sm md:text-base">Accredited by</h4>
-          <div className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 w-fit">
-            <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-10 md:h-12 object-contain" />
-            <img src="/accreditation/media.svg" alt="Media Skill Council" className="h-10 md:h-12 object-contain" />
-            <img src="/logos/nsdc.png" alt="NSDC Digital" className="h-10 md:h-12 object-contain" />
+          <h4 className="font-heading font-bold text-white mb-3 text-sm">Accredited by</h4>
+          <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2.5 w-fit">
+            <img src="/accreditation/skill-india.svg" alt="Skill India" className="h-8 md:h-10 object-contain" />
+            <img src="/accreditation/media.svg" alt="Media Skill Council" className="h-8 md:h-10 object-contain" />
+            <img src="/logos/nsdc.png" alt="NSDC Digital" className="h-8 md:h-10 object-contain" />
           </div>
         </div>
 
-        {/* Center: Contact */}
-        <div className="md:text-center md:pt-2">
-          <h4 className="font-heading font-bold text-white mb-3 text-base md:text-lg">Contact Us for any query</h4>
-          <p className="text-white/60 text-sm mb-1">+91 7353 515 515</p>
-          <p className="text-white/60 text-sm">info@da360.ai</p>
+        {/* Column 2: Contact */}
+        <div>
+          <h4 className="font-heading font-bold text-white mb-4 text-base">Contact Us</h4>
+          <ul className="space-y-2 text-sm text-white/60">
+            <li>
+              <a href="tel:+917353515515" className="hover:text-white transition-colors">+91 7353 515 515</a>
+            </li>
+            <li>
+              <a href="mailto:info@da360.ai" className="hover:text-white transition-colors">info@da360.ai</a>
+            </li>
+            <li>JP Nagar, Bangalore</li>
+            <li>Malleswaram, Bangalore</li>
+          </ul>
         </div>
 
-        {/* Right: Copyright + Legal */}
-        <div className="md:text-right md:pt-2">
-          <p className="text-xs text-white/40 mb-4">
+        {/* Column 3: Programs */}
+        <div>
+          <h4 className="font-heading font-bold text-white mb-4 text-base">Programs</h4>
+          <ul className="space-y-2 text-sm text-white/60">
+            <li><a href="#choose-path" className="hover:text-white transition-colors">Post Graduate Certificate Program</a></li>
+            <li><a href="#choose-path" className="hover:text-white transition-colors">Diploma in Digital Marketing</a></li>
+            <li><a href="#choose-path" className="hover:text-white transition-colors">Skill Diploma Program</a></li>
+            <li><a href="#curriculum" className="hover:text-white transition-colors">Curriculum</a></li>
+          </ul>
+        </div>
+
+        {/* Column 4: Legal */}
+        <div>
+          <h4 className="font-heading font-bold text-white mb-4 text-base">Legal</h4>
+          <ul className="space-y-2 text-sm text-white/60 mb-6">
+            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Term of Use</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Disclaimer</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Refund Policy</a></li>
+          </ul>
+          <p className="text-xs text-white/40">
             Copyright © {new Date().getFullYear()} Digital Academy 360. All rights reserved.
           </p>
-          <div className="flex flex-wrap md:justify-end gap-3 md:gap-4 text-xs text-white/40 mb-4">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Term of Use</a>
-            <a href="#" className="hover:text-white transition-colors">Disclaimer</a>
-            <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
-          </div>
         </div>
       </div>
     </div>
