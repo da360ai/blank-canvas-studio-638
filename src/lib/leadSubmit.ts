@@ -107,15 +107,22 @@ const submitLeadToSheet = async (payload: LeadPayload): Promise<boolean> => {
     submitted_at: payload.submittedAt,
   };
 
+  const body = JSON.stringify(formData);
+
   try {
-    await fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
+    await fetch(APPS_SCRIPT_URL, { method: "POST", body });
     return true;
   } catch (err) {
-    console.error("[lead] sheet submit failed", err);
-    return false;
+    // Apps Script redirects can trip CORS on the readable response even though
+    // the POST itself lands. Retry opaquely so the row still gets written.
+    console.warn("[lead] sheet submit CORS-blocked, retrying no-cors", err);
+    try {
+      await fetch(APPS_SCRIPT_URL, { method: "POST", mode: "no-cors", body });
+      return true;
+    } catch (err2) {
+      console.error("[lead] sheet submit failed", err2);
+      return false;
+    }
   }
 };
 
