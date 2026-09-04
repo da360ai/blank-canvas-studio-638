@@ -60,7 +60,7 @@ const HeroSection = () => {
     setShowOtp(false);
     setSubmitting(true);
 
-    await submitLead({
+    const result = await submitLead({
       source: "hero",
       fullName: fullName.trim(),
       email: email.trim(),
@@ -74,6 +74,12 @@ const HeroSection = () => {
     });
 
     setSubmitting(false);
+
+    if (!result.ok) {
+      setError("Something went wrong while submitting. Please try again.");
+      return;
+    }
+
     setSubmitted(true);
     setFullName(""); setEmail(""); setMobile(""); setExperience(""); setCourse(""); setLearningCenter("");
     navigate("/thank-you");
