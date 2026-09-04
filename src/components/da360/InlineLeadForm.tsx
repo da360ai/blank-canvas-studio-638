@@ -145,7 +145,7 @@ const InlineLeadForm = ({
             <select required value={learningCenter} onChange={(e) => setLearningCenter(e.target.value)} className="flex h-12 w-full rounded-lg border border-border bg-background px-4 text-base text-muted-foreground">
               <option value="" disabled>Learning Center</option>
               <option className="text-foreground" value="JP Nagar">JP Nagar</option>
-              <option className="text-foreground" value="Malleswaram">Malleswaram</option>
+              <option className="text-foreground" value="Malleshwaram">Malleshwaram/option>
             </select>
 
             <div className="flex items-center gap-4 py-1">

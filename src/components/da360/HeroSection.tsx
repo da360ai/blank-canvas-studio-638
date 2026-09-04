@@ -222,7 +222,7 @@ const HeroSection = () => {
                   >
                      <option value="" disabled>Learning Center</option>
                      <option className="text-foreground" value="JP Nagar">JP Nagar</option>
-                     <option className="text-foreground" value="Malleswaram">Malleswaram</option>
+                     <option className="text-foreground" value="Malleshwaram">Malleshwaram/option>
                   </select>
 
                   {/* Learning Mode */}
