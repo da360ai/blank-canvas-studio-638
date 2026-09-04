@@ -4,7 +4,7 @@
 import { getTrackingParams } from "@/lib/tracking";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxpUJRAdsDEScBmn25PoANAHaJBe1IN7J1ehozILA95ezCTIZ5IqrqVsShPngRGZEZAMA/exec";
+  "https://script.google.com/macros/s/AKfycbwThpgy2-Z3y5seTws49q8B2oAELIsAvqb8-iA7bAodPMWcOAs5rhzRomqW9VplT_6Exw/exec";
 
 export interface LeadPayload {
   source: string;
