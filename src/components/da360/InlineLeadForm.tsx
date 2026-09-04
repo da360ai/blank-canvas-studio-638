@@ -58,19 +58,25 @@ const InlineLeadForm = ({
     setError(null);
 
     setSubmitting(true);
-    await submitLead({
+    const result = await submitLead({
       source: source ?? `inline:${heading}`,
       fullName: fullName.trim(),
       email: email.trim(),
       countryCode,
-       mobile,
-       experience,
-       course,
-       learningCenter,
-       learningMode,
-       authorized,
+      mobile,
+      experience,
+      course,
+      learningCenter,
+      learningMode,
+      authorized,
     });
     setSubmitting(false);
+
+    if (!result.ok) {
+      setError("Something went wrong while submitting. Please try again.");
+      return;
+    }
+
     setSubmitted(true);
     setFullName("");
     setEmail("");
