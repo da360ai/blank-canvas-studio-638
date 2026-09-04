@@ -4,7 +4,7 @@
 import { getTrackingParams } from "@/lib/tracking";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxuUS_eeWVULCez-DsWhYKkZUm94JcKFVrOG0f1kq8BbRofOMxWakLGP_K_cNS_DmNaIA/exec";
+  "https://script.google.com/macros/s/AKfycbxpUJRAdsDEScBmn25PoANAHaJBe1IN7J1ehozILA95ezCTIZ5IqrqVsShPngRGZEZAMA/exec";
 
 export interface LeadPayload {
   source: string;
@@ -128,19 +128,13 @@ const submitLeadToSheet = async (payload: LeadPayload): Promise<boolean> => {
   const body = JSON.stringify(formData);
 
   try {
-    await fetch(APPS_SCRIPT_URL, { method: "POST", body });
+    // Apps Script Web Apps cannot return CORS headers, so use no-cors.
+    // The POST still lands and the row is appended.
+    await fetch(APPS_SCRIPT_URL, { method: "POST", mode: "no-cors", body });
     return true;
   } catch (err) {
-    // Apps Script redirects can trip CORS on the readable response even though
-    // the POST itself lands. Retry opaquely so the row still gets written.
-    console.warn("[lead] sheet submit CORS-blocked, retrying no-cors", err);
-    try {
-      await fetch(APPS_SCRIPT_URL, { method: "POST", mode: "no-cors", body });
-      return true;
-    } catch (err2) {
-      console.error("[lead] sheet submit failed", err2);
-      return false;
-    }
+    console.error("[lead] sheet submit failed", err);
+    return false;
   }
 };
 
