@@ -8,6 +8,9 @@ export const TRACKING_PARAMS = [
   "utm_content",
   "gclid",
   "fbclid",
+  "ad_name",
+  "adset_name",
+  "platform",
 ] as const;
 
 export type TrackingParam = (typeof TRACKING_PARAMS)[number];
