@@ -76,38 +76,46 @@ const buildApiPayload = (payload: LeadPayload) => ({
 });
 
 /**
- * Posts the lead to the Google Apps Script Web App (Google Sheets).
- * Simple request only: URLSearchParams body, no custom headers, no preflight.
+ * Posts the lead to the Google Apps Script Web App (Google Sheets) as JSON.
+ * No custom headers → simple request, no CORS preflight.
  */
-const submitLeadToSheet = async (payload: LeadPayload): Promise<void> => {
+const submitLeadToSheet = async (payload: LeadPayload): Promise<boolean> => {
   const utm = getTrackingParams();
-  const formData = new URLSearchParams();
-  formData.append("fullName", payload.fullName);
-  formData.append("email", payload.email);
-  formData.append("countryCode", payload.countryCode.split(" ")[0]);
-  formData.append("mobileNumber", payload.mobile);
-  formData.append("workExperience", payload.experience);
-  formData.append("course", payload.course || "");
-  formData.append("learningCenter", payload.learningCenter || "");
-  formData.append(
-    "mode",
-    payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online"
-  );
-  formData.append("consent", payload.authorized ? "Yes" : "No");
-  formData.append("cta", payload.source);
-  formData.append("sourceUrl", payload.pageUrl);
-  formData.append("utm_source", utm.utm_source);
-  formData.append("utm_medium", utm.utm_medium);
-  formData.append("utm_campaign", utm.utm_campaign);
-  formData.append("utm_term", utm.utm_term);
-  formData.append("utm_content", utm.utm_content);
-  formData.append("gclid", utm.gclid);
-  formData.append("fbclid", utm.fbclid);
+  const formData = {
+    full_name: payload.fullName,
+    phone_number: `${payload.countryCode.split(" ")[0]}${payload.mobile}`,
+    email: payload.email,
+    city: payload.learningCenter || "",
+    utm_source: utm.utm_source,
+    utm_medium: utm.utm_medium,
+    utm_campaign: utm.utm_campaign,
+    utm_term: utm.utm_term,
+    utm_content: utm.utm_content,
+    Courses: payload.course || "",
+    "Learning Modes":
+      payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online",
+    how_do_you_prefer_to_join_the_course:
+      payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online",
+    form_name: payload.source,
+    ad_name: utm.ad_name,
+    adset_name: utm.adset_name,
+    platform: utm.platform,
+    work_experience: payload.experience,
+    consent: payload.authorized ? "Yes" : "No",
+    page_url: payload.pageUrl,
+    referrer: payload.referrer,
+    submitted_at: payload.submittedAt,
+  };
 
   try {
-    await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData });
+    await fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+    return true;
   } catch (err) {
     console.error("[lead] sheet submit failed", err);
+    return false;
   }
 };
 
@@ -125,7 +133,7 @@ export const submitLeadToCrm = async (
     referrer: typeof document !== "undefined" ? document.referrer : "",
   };
 
-  await submitLeadToSheet(payload);
+  const sheetOk = await submitLeadToSheet(payload);
 
   try {
     const res = await fetch("https://api.digitalacademy360.com/dataapi2.php", {
@@ -136,12 +144,13 @@ export const submitLeadToCrm = async (
 
     const result = await res.json();
     console.log("[API response]", result);
-    return { ok: true };
   } catch (err) {
     console.error("[lead] API failed", err);
-    return { ok: false, reason: "network-error" };
   }
+
+  return sheetOk ? { ok: true } : { ok: false, reason: "network-error" };
 };
+
 
 // ─── Legacy alias (keep so other forms don't break) ──────────────────────────
 
