@@ -81,21 +81,39 @@ const buildApiPayload = (payload: LeadPayload) => ({
  */
 const submitLeadToSheet = async (payload: LeadPayload): Promise<boolean> => {
   const utm = getTrackingParams();
+
+  // Normalize the centre name to the spelling the Apps Script → Zoho mapper
+  // looks for ("Malleshwaram", "JP Nagar", "Jayanagar").
+  const rawCenter = (payload.learningCenter || "").toLowerCase();
+  const center = rawCenter.includes("malle")
+    ? "Malleshwaram"
+    : rawCenter.includes("jayanagar")
+      ? "Jayanagar"
+      : rawCenter.includes("jp")
+        ? "JP Nagar"
+        : payload.learningCenter || "";
+
+  const mode =
+    payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online";
+
+  // Centre must travel with the mode so getCenter() can resolve it.
+  const modeWithCenter = center ? `${mode} - ${center}` : mode;
+
   const formData = {
     full_name: payload.fullName,
     phone_number: `${payload.countryCode.split(" ")[0]}${payload.mobile}`,
     email: payload.email,
-    city: payload.learningCenter || "",
+    city: "Bangalore",
     utm_source: utm.utm_source,
     utm_medium: utm.utm_medium,
     utm_campaign: utm.utm_campaign,
     utm_term: utm.utm_term,
     utm_content: utm.utm_content,
     Courses: payload.course || "",
-    "Learning Modes":
-      payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online",
-    how_do_you_prefer_to_join_the_course:
-      payload.learningMode.toLowerCase() === "classroom" ? "Classroom" : "Online",
+    "Learning Modes": modeWithCenter,
+    how_do_you_prefer_to_join_the_course: modeWithCenter,
+    learning_center: center,
+    lead_status: "New Lead",
     form_name: payload.source,
     ad_name: utm.ad_name,
     adset_name: utm.adset_name,
